@@ -1,0 +1,17 @@
+/* 
+  Localization.strings
+  MeChat
+
+  Created by Hien Ho Developer on 4/5/20.
+  Copyright © 2020 Hien Ho Developer. All rights reserved.
+*/
+"SignIn" = "Đăng nhập";
+"LetSignIn" = "Đăng nhập nào!";
+"SignUp" = "Đăng kí";
+"LetSignUp" = "Đăng kí nào!";
+
+"Welcome" = "Xin chào";
+"Email" = "Email";
+"Password" = "Mật khẩu";
+"Done" = "Xong";
+"ChatRoom" = "Phòng chat";

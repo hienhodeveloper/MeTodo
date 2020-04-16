@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'MeTodo' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for MeTodo
+  pod 'R.swift'
+  pod 'Kingfisher'
+  
+  pod 'SnapKit'
+  
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  
+  pod 'liquid-swipe'
+  pod 'FSCalendar'
+  pod 'UPCarouselFlowLayout', :git => 'https://github.com/hienhodeveloper/UPCarouselFlowLayout.git'
+end

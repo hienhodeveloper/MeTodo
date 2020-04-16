@@ -1,0 +1,6 @@
+framework module Pods_MeTodo {
+  umbrella header "Pods-MeTodo-umbrella.h"
+
+  export *
+  module * { export * }
+}
