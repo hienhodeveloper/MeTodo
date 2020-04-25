@@ -33,7 +33,7 @@ class SignUpViewController: AppViewController {
         $0.placeholder = R.string.localization.email()
         $0.keyboardType = .emailAddress
         $0.backgroundColor = .white
-        $0.cornerRadius = CornerRadius.Medium
+        $0.cornerRad = CornerRadius.Medium
         $0.addTarget(self, action: #selector(SignUpVC.didChangeTextField(sender:)), for: .editingChanged)
     }
     
@@ -41,7 +41,7 @@ class SignUpViewController: AppViewController {
         $0.placeholder = R.string.localization.password()
         $0.isSecureTextEntry = true
         $0.backgroundColor = .white
-        $0.cornerRadius = CornerRadius.Medium
+        $0.cornerRad = CornerRadius.Medium
         $0.addTarget(self, action: #selector(SignUpVC.didChangeTextField(sender:)), for: .editingChanged)
     }
     
@@ -49,7 +49,7 @@ class SignUpViewController: AppViewController {
         $0.placeholder = R.string.localization.password()
         $0.isSecureTextEntry = true
         $0.backgroundColor = .white
-        $0.cornerRadius = CornerRadius.Medium
+        $0.cornerRad = CornerRadius.Medium
         $0.addTarget(self, action: #selector(SignUpVC.didChangeTextField(sender:)), for: .editingChanged)
     }
     

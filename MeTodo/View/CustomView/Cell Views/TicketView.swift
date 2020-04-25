@@ -13,7 +13,7 @@ class TicketView: AppView {
     private let containerHS = Init(value: AppStackView()) {
         $0.axis = .horizontal
         $0.spacing = Spacing.Medium
-        $0.distribution = .fillProportionally
+        $0.distribution = .fill
         $0.alignment = .center
     }
     
@@ -24,7 +24,7 @@ class TicketView: AppView {
         $0.axis = .vertical
     }
     
-    private let ticketTag = TicketTagView()
+    private let ticketTag = TagIconView()
     
     private let detailButton = Init(value: AppButton()) {
         $0.tintColor = R.color.lightPurpleColor()
@@ -43,10 +43,22 @@ class TicketView: AppView {
         $0.textColor = .systemGray3
     }
     
+    var ticket: Ticket! {
+        didSet {
+            ticketNameLabel.text = ticket.name
+            dateLabel.text = ticket.getDateTime()
+            if ticket.remindMe {
+                ticketTag.icon = UIImage(systemName: "bell")
+            } else {
+                ticketTag.icon = UIImage(systemName: "bell.slash")
+            }
+        }
+    }
+    
     override func setupView() {
         super.setupView()
         backgroundColor = .white
-        cornerRadius = CornerRadius.Medium
+        cornerRad = CornerRadius.Medium
         
         addSubview(inforContainerVS)
         addSubview(containerHS)
@@ -62,7 +74,7 @@ class TicketView: AppView {
         containerHS.addArrangedSubview(detailButton)
         
         ticketTag.snp.makeConstraints {
-            $0.size.equalTo(AppImageSize.Large)
+            $0.width.equalTo(AppImageSize.Large)
         }
         
         detailButton.snp.makeConstraints {

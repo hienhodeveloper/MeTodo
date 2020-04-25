@@ -8,15 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1E00EF6A24473A190049D0F7 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E00EF6924473A190049D0F7 /* FloatingTextField.swift */; };
-		1E00EF7224475DCF0049D0F7 /* AddTicketVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E00EF7124475DCF0049D0F7 /* AddTicketVC+Extension.swift */; };
+		1E00EF7224475DCF0049D0F7 /* AddTicketPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E00EF7124475DCF0049D0F7 /* AddTicketPanelViewController.swift */; };
 		1E00EF762447841C0049D0F7 /* RemindMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E00EF752447841C0049D0F7 /* RemindMeView.swift */; };
 		1E47452224422978002B1F27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47452124422978002B1F27 /* AppDelegate.swift */; };
 		1E47452424422978002B1F27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47452324422978002B1F27 /* SceneDelegate.swift */; };
 		1E47452B2442297B002B1F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E47452A2442297B002B1F27 /* Assets.xcassets */; };
 		1E47452E2442297B002B1F27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E47452C2442297B002B1F27 /* LaunchScreen.storyboard */; };
-		1E47459E24422D0D002B1F27 /* ListRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47456324422D0D002B1F27 /* ListRoomViewModel.swift */; };
 		1E47459F24422D0D002B1F27 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47456424422D0D002B1F27 /* AppViewModel.swift */; };
-		1E4745A024422D0D002B1F27 /* ChatRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47456524422D0D002B1F27 /* ChatRoomViewModel.swift */; };
 		1E4745A124422D0D002B1F27 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47456624422D0D002B1F27 /* SignInViewModel.swift */; };
 		1E4745A224422D0D002B1F27 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47456824422D0D002B1F27 /* AppNavigator.swift */; };
 		1E4745A324422D0D002B1F27 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47456924422D0D002B1F27 /* Navigator.swift */; };
@@ -55,6 +53,18 @@
 		1E4745D124423E16002B1F27 /* LiquidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4745D024423E16002B1F27 /* LiquidViewController.swift */; };
 		1E4745D424423F9D002B1F27 /* LiquidViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4745D324423F9D002B1F27 /* LiquidViewControllerProtocol.swift */; };
 		1E4745D62442411C002B1F27 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4745D52442411C002B1F27 /* StartViewController.swift */; };
+		1E535892244DFE5F008E0A7B /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E535891244DFE5F008E0A7B /* BaseModel.swift */; };
+		1E5726FB244B3AE200C1A001 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5726FA244B3AE200C1A001 /* FirestoreService.swift */; };
+		1E5726FD244B3B0F00C1A001 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5726FC244B3B0F00C1A001 /* FirestoreManager.swift */; };
+		1E5726FF244B3E3400C1A001 /* ListTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5726FE244B3E3400C1A001 /* ListTicketViewModel.swift */; };
+		1E572701244B404000C1A001 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E572700244B404000C1A001 /* Ticket.swift */; };
+		1E572703244B407F00C1A001 /* CategoryTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E572702244B407F00C1A001 /* CategoryTag.swift */; };
+		1E572705244B4D8E00C1A001 /* TimeFormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E572704244B4D8E00C1A001 /* TimeFormatHelper.swift */; };
+		1E572707244B6BB300C1A001 /* AddTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E572706244B6BB300C1A001 /* AddTicketViewModel.swift */; };
+		1E671F002449D2A500C2F347 /* GenericCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671EFF2449D2A500C2F347 /* GenericCollectionViewCell.swift */; };
+		1E671F022449F72300C2F347 /* CategoryTagList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671F012449F72300C2F347 /* CategoryTagList.swift */; };
+		1E79F3E0244AE1C000CCEC12 /* AddTicketPanelVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E79F3DF244AE1C000CCEC12 /* AddTicketPanelVC+Extension.swift */; };
+		1EB30F46244C89D500024906 /* CategoryTagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB30F45244C89D500024906 /* CategoryTagViewModel.swift */; };
 		1EB5B78B244312940028677E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5B78A244312940028677E /* UIViewController.swift */; };
 		1EB5B78D24431DD30028677E /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5B78C24431DD30028677E /* SignUpViewModel.swift */; };
 		1EB5B78F2443413A0028677E /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5B78E2443413A0028677E /* HomeTabBarViewController.swift */; };
@@ -67,9 +77,8 @@
 		1EC8396C2442D8B600E7F0BF /* OnboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8396B2442D8B600E7F0BF /* OnboardHeaderView.swift */; };
 		1EE98DE3244476EA0090764B /* ListTicketViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DE2244476EA0090764B /* ListTicketViewController+Extension.swift */; };
 		1EE98DEA2444780A0090764B /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DE92444780A0090764B /* TicketView.swift */; };
-		1EE98DED244479CA0090764B /* GenericCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DEB244479C90090764B /* GenericCollectionViewCell.swift */; };
 		1EE98DEE244479CA0090764B /* GenericTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DEC244479CA0090764B /* GenericTableViewCell.swift */; };
-		1EE98DF024448F580090764B /* TicketTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DEF24448F580090764B /* TicketTagView.swift */; };
+		1EE98DF024448F580090764B /* TagIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DEF24448F580090764B /* TagIconView.swift */; };
 		1EE98DF22444962C0090764B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DF12444962C0090764B /* HeaderView.swift */; };
 		1EE98DF424449AC10090764B /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DF324449AC10090764B /* CategoryView.swift */; };
 		1EE98DF724449FBD0090764B /* TicketCategoryCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DF624449FBD0090764B /* TicketCategoryCollection.swift */; };
@@ -79,7 +88,7 @@
 
 /* Begin PBXFileReference section */
 		1E00EF6924473A190049D0F7 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
-		1E00EF7124475DCF0049D0F7 /* AddTicketVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTicketVC+Extension.swift"; sourceTree = "<group>"; };
+		1E00EF7124475DCF0049D0F7 /* AddTicketPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketPanelViewController.swift; sourceTree = "<group>"; };
 		1E00EF752447841C0049D0F7 /* RemindMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindMeView.swift; sourceTree = "<group>"; };
 		1E47451E24422978002B1F27 /* MeTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E47452124422978002B1F27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,9 +96,7 @@
 		1E47452A2442297B002B1F27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E47452D2442297B002B1F27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E47452F2442297B002B1F27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1E47456324422D0D002B1F27 /* ListRoomViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRoomViewModel.swift; sourceTree = "<group>"; };
 		1E47456424422D0D002B1F27 /* AppViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
-		1E47456524422D0D002B1F27 /* ChatRoomViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomViewModel.swift; sourceTree = "<group>"; };
 		1E47456624422D0D002B1F27 /* SignInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		1E47456824422D0D002B1F27 /* AppNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
 		1E47456924422D0D002B1F27 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -129,6 +136,18 @@
 		1E4745D024423E16002B1F27 /* LiquidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidViewController.swift; sourceTree = "<group>"; };
 		1E4745D324423F9D002B1F27 /* LiquidViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidViewControllerProtocol.swift; sourceTree = "<group>"; };
 		1E4745D52442411C002B1F27 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		1E535891244DFE5F008E0A7B /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		1E5726FA244B3AE200C1A001 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		1E5726FC244B3B0F00C1A001 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		1E5726FE244B3E3400C1A001 /* ListTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTicketViewModel.swift; sourceTree = "<group>"; };
+		1E572700244B404000C1A001 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		1E572702244B407F00C1A001 /* CategoryTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTag.swift; sourceTree = "<group>"; };
+		1E572704244B4D8E00C1A001 /* TimeFormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatHelper.swift; sourceTree = "<group>"; };
+		1E572706244B6BB300C1A001 /* AddTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketViewModel.swift; sourceTree = "<group>"; };
+		1E671EFF2449D2A500C2F347 /* GenericCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewCell.swift; sourceTree = "<group>"; };
+		1E671F012449F72300C2F347 /* CategoryTagList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTagList.swift; sourceTree = "<group>"; };
+		1E79F3DF244AE1C000CCEC12 /* AddTicketPanelVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTicketPanelVC+Extension.swift"; sourceTree = "<group>"; };
+		1EB30F45244C89D500024906 /* CategoryTagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTagViewModel.swift; sourceTree = "<group>"; };
 		1EB5B78A244312940028677E /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		1EB5B78C24431DD30028677E /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		1EB5B78E2443413A0028677E /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
@@ -141,9 +160,8 @@
 		1EC8396B2442D8B600E7F0BF /* OnboardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardHeaderView.swift; sourceTree = "<group>"; };
 		1EE98DE2244476EA0090764B /* ListTicketViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListTicketViewController+Extension.swift"; sourceTree = "<group>"; };
 		1EE98DE92444780A0090764B /* TicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
-		1EE98DEB244479C90090764B /* GenericCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericCollectionViewCell.swift; path = "../../../../../../../meshi-ios/student/utility/GenericCollectionViewCell.swift"; sourceTree = "<group>"; };
 		1EE98DEC244479CA0090764B /* GenericTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTableViewCell.swift; sourceTree = "<group>"; };
-		1EE98DEF24448F580090764B /* TicketTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTagView.swift; sourceTree = "<group>"; };
+		1EE98DEF24448F580090764B /* TagIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagIconView.swift; sourceTree = "<group>"; };
 		1EE98DF12444962C0090764B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		1EE98DF324449AC10090764B /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		1EE98DF624449FBD0090764B /* TicketCategoryCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCategoryCollection.swift; sourceTree = "<group>"; };
@@ -210,6 +228,9 @@
 		1E47455E24422D0D002B1F27 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1E572700244B404000C1A001 /* Ticket.swift */,
+				1E572702244B407F00C1A001 /* CategoryTag.swift */,
+				1E535891244DFE5F008E0A7B /* BaseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,11 +238,12 @@
 		1E47456224422D0D002B1F27 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				1E47456324422D0D002B1F27 /* ListRoomViewModel.swift */,
 				1E47456424422D0D002B1F27 /* AppViewModel.swift */,
-				1E47456524422D0D002B1F27 /* ChatRoomViewModel.swift */,
 				1E47456624422D0D002B1F27 /* SignInViewModel.swift */,
 				1EB5B78C24431DD30028677E /* SignUpViewModel.swift */,
+				1E5726FE244B3E3400C1A001 /* ListTicketViewModel.swift */,
+				1E572706244B6BB300C1A001 /* AddTicketViewModel.swift */,
+				1EB30F45244C89D500024906 /* CategoryTagViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -265,6 +287,8 @@
 			children = (
 				1E47457224422D0D002B1F27 /* FirebaseService.swift */,
 				1E47457324422D0D002B1F27 /* FirebaseManager.swift */,
+				1E5726FA244B3AE200C1A001 /* FirestoreService.swift */,
+				1E5726FC244B3B0F00C1A001 /* FirestoreManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -287,7 +311,8 @@
 				1E47457824422D0D002B1F27 /* HomeRoutes.swift */,
 				1EB5B78E2443413A0028677E /* HomeTabBarViewController.swift */,
 				1EB5B79C244379290028677E /* AddTicketViewController.swift */,
-				1E00EF7124475DCF0049D0F7 /* AddTicketVC+Extension.swift */,
+				1E00EF7124475DCF0049D0F7 /* AddTicketPanelViewController.swift */,
+				1E79F3DF244AE1C000CCEC12 /* AddTicketPanelVC+Extension.swift */,
 			);
 			path = "Home Tabbar";
 			sourceTree = "<group>";
@@ -295,8 +320,6 @@
 		1E47457A24422D0D002B1F27 /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
-				1EE98DEB244479C90090764B /* GenericCollectionViewCell.swift */,
-				1EE98DEC244479CA0090764B /* GenericTableViewCell.swift */,
 				1E4745D224423E20002B1F27 /* View Controllers */,
 				1E47457B24422D0D002B1F27 /* AppImageView.swift */,
 				1E47457C24422D0D002B1F27 /* AppView.swift */,
@@ -304,6 +327,8 @@
 				1E47458024422D0D002B1F27 /* AppLabel.swift */,
 				1E47458124422D0D002B1F27 /* AppButton.swift */,
 				1E47458324422D0D002B1F27 /* AppStackView.swift */,
+				1EE98DEC244479CA0090764B /* GenericTableViewCell.swift */,
+				1E671EFF2449D2A500C2F347 /* GenericCollectionViewCell.swift */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -315,9 +340,8 @@
 				1EE98DE8244477EE0090764B /* Cell Views */,
 				1EC8396B2442D8B600E7F0BF /* OnboardHeaderView.swift */,
 				1EB5B79E2443859F0028677E /* TicketCalendarView.swift */,
-				1EE98DEF24448F580090764B /* TicketTagView.swift */,
+				1EE98DEF24448F580090764B /* TagIconView.swift */,
 				1E00EF6924473A190049D0F7 /* FloatingTextField.swift */,
-				1E00EF752447841C0049D0F7 /* RemindMeView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -351,6 +375,7 @@
 				1E47459024422D0D002B1F27 /* AppConfig.swift */,
 				1EB5B7902443461B0028677E /* AppError.swift */,
 				1EB5B7922443528B0028677E /* AppNotification.swift */,
+				1E572704244B4D8E00C1A001 /* TimeFormatHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -403,9 +428,11 @@
 		1EE98DE8244477EE0090764B /* Cell Views */ = {
 			isa = PBXGroup;
 			children = (
+				1E00EF752447841C0049D0F7 /* RemindMeView.swift */,
 				1EE98DF12444962C0090764B /* HeaderView.swift */,
 				1EE98DE92444780A0090764B /* TicketView.swift */,
 				1EE98DF324449AC10090764B /* CategoryView.swift */,
+				1E671F012449F72300C2F347 /* CategoryTagList.swift */,
 			);
 			path = "Cell Views";
 			sourceTree = "<group>";
@@ -573,20 +600,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E4745C424422D0E002B1F27 /* UIImage.swift in Sources */,
+				1E5726FF244B3E3400C1A001 /* ListTicketViewModel.swift in Sources */,
 				1E4745A224422D0D002B1F27 /* AppNavigator.swift in Sources */,
-				1E47459E24422D0D002B1F27 /* ListRoomViewModel.swift in Sources */,
 				1EB5B7912443461B0028677E /* AppError.swift in Sources */,
 				1EE98DF424449AC10090764B /* CategoryView.swift in Sources */,
 				1EB5B798244372050028677E /* TicketTabRoutes.swift in Sources */,
-				1E4745A024422D0D002B1F27 /* ChatRoomViewModel.swift in Sources */,
 				1E4745CF24423CD2002B1F27 /* AppViewControllerProtocol.swift in Sources */,
 				1EB5B78D24431DD30028677E /* SignUpViewModel.swift in Sources */,
 				1E4745CD24423A97002B1F27 /* SignUpViewController.swift in Sources */,
 				1E4745AE24422D0D002B1F27 /* AppViewController.swift in Sources */,
+				1E572707244B6BB300C1A001 /* AddTicketViewModel.swift in Sources */,
 				1E4745B424422D0D002B1F27 /* AppStackView.swift in Sources */,
 				1E4745D124423E16002B1F27 /* LiquidViewController.swift in Sources */,
 				1EB5B79D244379290028677E /* AddTicketViewController.swift in Sources */,
 				1EE98DEE244479CA0090764B /* GenericTableViewCell.swift in Sources */,
+				1E572701244B404000C1A001 /* Ticket.swift in Sources */,
 				1EC8396C2442D8B600E7F0BF /* OnboardHeaderView.swift in Sources */,
 				1E4745C324422D0E002B1F27 /* UITextField.swift in Sources */,
 				1E4745B724422D0D002B1F27 /* OnboardRoutes.swift in Sources */,
@@ -597,26 +625,35 @@
 				1E4745A324422D0D002B1F27 /* Navigator.swift in Sources */,
 				1E00EF6A24473A190049D0F7 /* FloatingTextField.swift in Sources */,
 				1EB5B79524435CE80028677E /* ListTicketViewController.swift in Sources */,
+				1E572705244B4D8E00C1A001 /* TimeFormatHelper.swift in Sources */,
+				1E5726FB244B3AE200C1A001 /* FirestoreService.swift in Sources */,
 				1E4745A124422D0D002B1F27 /* SignInViewModel.swift in Sources */,
+				1E5726FD244B3B0F00C1A001 /* FirestoreManager.swift in Sources */,
 				1EB5B7932443528B0028677E /* AppNotification.swift in Sources */,
 				1E4745B624422D0D002B1F27 /* OnboardViewController.swift in Sources */,
 				1E4745A424422D0D002B1F27 /* AppDimension.swift in Sources */,
+				1E79F3E0244AE1C000CCEC12 /* AddTicketPanelVC+Extension.swift in Sources */,
 				1E4745B124422D0D002B1F27 /* AppLabel.swift in Sources */,
+				1E671F002449D2A500C2F347 /* GenericCollectionViewCell.swift in Sources */,
 				1E4745D424423F9D002B1F27 /* LiquidViewControllerProtocol.swift in Sources */,
 				1E4745BB24422D0D002B1F27 /* AnalyticsManager.swift in Sources */,
 				1E4745BC24422D0D002B1F27 /* UIHelper.swift in Sources */,
 				1E4745BA24422D0D002B1F27 /* AnalyticsService.swift in Sources */,
 				1EE98DF92444A3D90090764B /* UICollectionView.swift in Sources */,
-				1EE98DF024448F580090764B /* TicketTagView.swift in Sources */,
+				1EE98DF024448F580090764B /* TagIconView.swift in Sources */,
 				1E4745BE24422D0D002B1F27 /* UIScrollView.swift in Sources */,
+				1E671F022449F72300C2F347 /* CategoryTagList.swift in Sources */,
 				1E4745BD24422D0D002B1F27 /* AppConfig.swift in Sources */,
 				1E4745C024422D0E002B1F27 /* UIColor.swift in Sources */,
 				1E4745C524422D0E002B1F27 /* StringExtension.swift in Sources */,
+				1E572703244B407F00C1A001 /* CategoryTag.swift in Sources */,
 				1E4745A724422D0D002B1F27 /* FirebaseManager.swift in Sources */,
 				1EB5B78F2443413A0028677E /* HomeTabBarViewController.swift in Sources */,
 				1E4745B924422D0D002B1F27 /* AnalyticsEvent.swift in Sources */,
+				1EB30F46244C89D500024906 /* CategoryTagViewModel.swift in Sources */,
 				1E4745C924422DDE002B1F27 /* R.generated.swift in Sources */,
 				1EE98DF724449FBD0090764B /* TicketCategoryCollection.swift in Sources */,
+				1E535892244DFE5F008E0A7B /* BaseModel.swift in Sources */,
 				1E4745AC24422D0D002B1F27 /* AppImageView.swift in Sources */,
 				1E4745AD24422D0D002B1F27 /* AppView.swift in Sources */,
 				1E47452224422978002B1F27 /* AppDelegate.swift in Sources */,
@@ -626,14 +663,13 @@
 				1EB5B78B244312940028677E /* UIViewController.swift in Sources */,
 				1EE98DF22444962C0090764B /* HeaderView.swift in Sources */,
 				1E4745D62442411C002B1F27 /* StartViewController.swift in Sources */,
-				1EE98DED244479CA0090764B /* GenericCollectionViewCell.swift in Sources */,
 				1E4745C124422D0E002B1F27 /* NSObject.swift in Sources */,
 				1E47452424422978002B1F27 /* SceneDelegate.swift in Sources */,
 				1E00EF762447841C0049D0F7 /* RemindMeView.swift in Sources */,
 				1EB5B79F2443859F0028677E /* TicketCalendarView.swift in Sources */,
 				1EE98DE3244476EA0090764B /* ListTicketViewController+Extension.swift in Sources */,
 				1E4745AF24422D0D002B1F27 /* AppTextField.swift in Sources */,
-				1E00EF7224475DCF0049D0F7 /* AddTicketVC+Extension.swift in Sources */,
+				1E00EF7224475DCF0049D0F7 /* AddTicketPanelViewController.swift in Sources */,
 				1E4745C224422D0E002B1F27 /* UITableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

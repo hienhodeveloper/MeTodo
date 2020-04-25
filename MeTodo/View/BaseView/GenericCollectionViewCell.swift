@@ -1,8 +1,9 @@
 //
 //  GenericCollectionViewCell.swift
-//  student
+//  MeTodo
 //
-//  Created by Hien Ho on 3/5/20.
+//  Created by Hien Ho Developer on 4/17/20.
+//  Copyright © 2020 Hien Ho Developer. All rights reserved.
 //
 
 import UIKit
@@ -30,7 +31,9 @@ class GenericCollectionViewCell<View: AppView>: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
-        subviews.forEach { ($0 as? AppView)?.setDefaultValues() }
+        subviews.forEach {
+           ($0 as? AppView)?.setDefaultValues()
+        }
     }
     
     private func setUpViews() {
@@ -49,7 +52,7 @@ class GenericCollectionViewCell<View: AppView>: UICollectionViewCell {
     
     private func updateCellMargin() {
         guard let cellView = cellView else { return }
-        cornerRadius = cellView.cornerRadius
+        cornerRad = cellView.cornerRad
         cellView.snp.remakeConstraints {
             $0.edges.equalToSuperview().inset(margin)
         }

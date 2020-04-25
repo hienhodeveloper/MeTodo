@@ -8,16 +8,6 @@
 import UIKit
 import SnapKit
 
-extension UIEdgeInsets {
-    init(horizontal: CGFloat) {
-        self.init(top: 0, left: horizontal, bottom: 0, right: horizontal)
-    }
-    
-    init(vertical: CGFloat) {
-        self.init(top: vertical, left: 0, bottom: vertical, right: 0)
-    }
-}
-
 /** * Description: Class to make a UITableViewCell from a custom view
     * Example: <NewPresidentProfileViewController.swift>
     - To registe cell: tableView.regisCell(GenericTableViewCell<EmptySectionView>.self)
@@ -85,7 +75,7 @@ class GenericTableViewCell<View: AppView>: UITableViewCell {
     
     private func updateCellMargin() {
         guard let cellView = cellView else { return }
-        cornerRadius = cellView.cornerRadius
+        cornerRad = cellView.cornerRad
         cellView.snp.remakeConstraints {
             $0.edges.equalToSuperview().inset(margin)
         }

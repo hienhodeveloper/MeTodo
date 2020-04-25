@@ -11,7 +11,7 @@ import Rswift
 
 enum ListTicketSection: Int, CaseIterable {
     case today
-    case tomorrow
+    case other
     static let count = ListTicketSection.allCases.count
 }
 
@@ -24,9 +24,9 @@ extension ListTicketViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch ListTicketSection(rawValue: section)! {
         case .today:
-            return 3
-        case .tomorrow:
-            return 1
+            return viewModel.numberOfTodayTicket
+        case .other:
+            return viewModel.numberOfOtherTicket
         }
     }
     
@@ -36,8 +36,8 @@ extension ListTicketViewController: UITableViewDataSource {
         case .today:
             header.headerTitle = "Today"
             
-        case .tomorrow:
-            header.headerTitle = "Tommorow"
+        case .other:
+            header.headerTitle = "Other"
             
         }
         return header
@@ -47,8 +47,8 @@ extension ListTicketViewController: UITableViewDataSource {
         switch ListTicketSection(rawValue: indexPath.section)! {
         case .today:
             return UITableView.automaticDimension
-        case .tomorrow:
-            return 208
+        case .other:
+            return UITableView.automaticDimension
         }
     }
     
@@ -56,8 +56,8 @@ extension ListTicketViewController: UITableViewDataSource {
         switch ListTicketSection(rawValue: indexPath.section)! {
         case .today:
             return makeTodayCell(tableView, cellForRowAt: indexPath)
-        case .tomorrow:
-            return makeTomorrowCell(tableView, cellForRowAt: indexPath)
+        case .other:
+            return makeOtherCell(tableView, cellForRowAt: indexPath)
         }
     }
 }
@@ -69,20 +69,21 @@ extension ListTicketViewController {
             let view = TicketView()
             cell.cellView = view
             cell.outsideCellViewColor = R.color.appBackgroundColor()!
-            // TODO: create func to check cell is the last cell of section
         }
-        cell.margin = .init(top: 0, left: Margin.Normal, bottom: indexPath.row == 2 ? 0: Spacing.Medium, right: Margin.Normal)
+        cell.cellView?.ticket = viewModel.todayTicketAt(indexPath)
+        cell.margin = .init(top: 0, left: Margin.Normal, bottom: viewModel.isEndTodayTicket(indexPath) ? 0: Spacing.Medium, right: Margin.Normal)
         return cell
     }
     
-    private func makeTomorrowCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as GenericTableViewCell<TicketCategoryCollection>
+    private func makeOtherCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as GenericTableViewCell<TicketView>
         if cell.cellView == nil {
-            let view = TicketCategoryCollection()
+            let view = TicketView()
             cell.cellView = view
-            // TODO: create func to check cell is the last cell of section
-            // cell.margin = .init(top: 0, left: Margin.Normal, bottom: indexPath.row == 2 ? 0: Spacing.Medium, right: Margin.Normal)
+            cell.outsideCellViewColor = R.color.appBackgroundColor()!
         }
+        cell.cellView?.ticket = viewModel.otherTicketAt(indexPath)
+        cell.margin = .init(top: 0, left: Margin.Normal, bottom: viewModel.isEndOtherTicket(indexPath) ? 0: Spacing.Medium, right: Margin.Normal)
         return cell
     }
 }

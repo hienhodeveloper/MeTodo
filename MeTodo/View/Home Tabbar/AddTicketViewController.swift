@@ -7,20 +7,19 @@
 //
 
 import UIKit
+import FloatingPanel
 
 typealias AddTicketVC = AddTicketViewController
 class AddTicketViewController: AppViewController {
     
     let containerView = Init(value: AppView()) {
         $0.backgroundColor = R.color.lightOrangeColor()
-        $0.cornerRadius = CornerRadius.Large
+        $0.cornerRad = CornerRadius.Large
     }
     
     let backButton = Init(value: AppButton()) {
         $0.setImage(R.image.leftArrowIcon()!, for: .normal)
-        $0.imageView?.snp.makeConstraints{
-            $0.edges.equalToSuperview()
-        }
+        $0.iconSize = .init(width: 24, height: 24)
         $0.addTarget(self, action: #selector(AddTicketVC.didTapBackButton), for: .touchUpInside)
     }
     
@@ -36,33 +35,30 @@ class AddTicketViewController: AppViewController {
     }
     
     let ticketNameTextField = Init(value: FloatingTextField()) {
-        $0.text = "my love"
+        $0.title = "Name"
+        $0.isHiddenRightButton = true
         $0.textField.font = .systemFont(ofSize: FontSize.Higher, weight: .medium)
-    }
-    
-    let bodyContainer = Init(value: AppView()) {
-        $0.backgroundColor = .white
-        $0.cornerRadius = CornerRadius.Large
-    }
-    
-    let tableView = Init(value: UITableView(frame: .zero, style: .grouped) ) {
-        $0.separatorStyle = .none
-        $0.showsVerticalScrollIndicator = false
-        $0.backgroundColor = .clear
+        $0.textField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
     
     let createButton = Init(value: AppButton() ) { view in
         view.backgroundColor = R.color.dimPurpleColor()
         view.setTitle("CREATE TASK", for: .normal)
         view.setTitleColor(.white, for: .normal)
-        view.cornerRadius = CornerRadius.Regular
+        view.cornerRad = CornerRadius.Regular
         view.titleLabel?.font = .systemFont(ofSize: FontSize.Regular, weight: .bold)
-        view.setImage(R.image.addTabIcon()!, for: .normal)
+        view.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
         view.imageView?.tintColor = R.color.lightPurpleColor()
-        view.imageView?.snp.makeConstraints { make in
-            make.size.equalTo(IconButtonSize.Regular)
-            make.right.equalTo(view.titleLabel!.snp.left).offset(-Margin.Small)
-        }
+        view.imageEdgeInsets = .init(onlyRight:Margin.Medium)
+        view.addTarget(self, action: #selector(createTicket), for: .touchUpInside)
+    }
+
+    var addTicketPanel: FloatingPanelController!
+    let contentVC = AddTicketPanelViewController()
+    var isUpdatedHalfPanelHeight = false
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     override var backgroundColor: UIColor { .white }
@@ -73,10 +69,8 @@ class AddTicketViewController: AppViewController {
         containerView.addSubview(backButton)
         containerView.addSubview(headerlabel)
         containerView.addSubview(ticketNameTextField)
-        containerView.addSubview(bodyContainer)
         
-        bodyContainer.addSubview(tableView)
-        bodyContainer.addSubview(createButton)
+        embedInDismissKeyboardView(view: containerView)
     }
     
     override func setupUI() {
@@ -88,7 +82,7 @@ class AddTicketViewController: AppViewController {
         backButton.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(Margin.Normal)
             $0.left.equalToSuperview().inset(Margin.Normal)
-            $0.size.equalTo(IconButtonSize.Regular)
+            $0.size.equalTo(IconButtonSize.Hight)
         }
         
         headerlabel.snp.makeConstraints {
@@ -102,47 +96,95 @@ class AddTicketViewController: AppViewController {
             $0.right.equalToSuperview().inset(Margin.Normal)
         }
         
-        bodyContainer.snp.makeConstraints {
-            $0.bottom.equalToSuperview()
-            $0.left.equalToSuperview()
-            $0.right.equalToSuperview()
-            $0.top.equalTo(ticketNameTextField.snp.bottom).inset(-32)
-        }
+        addTicketPanel = FloatingPanelController()
+        addTicketPanel.surfaceView.backgroundColor = .white
+        addTicketPanel.surfaceView.cornerRadius = CornerRadius.Large
+        addTicketPanel.surfaceView.shadowHidden = true
+        addTicketPanel.delegate = self
+        
+        addTicketPanel.set(contentViewController: contentVC)
+        addTicketPanel.track(scrollView: contentVC.tableView)
+        addTicketPanel.addPanel(toParent: self)
+        
+        view.addSubview(createButton)
         
         createButton.snp.makeConstraints {
-            $0.bottom.equalToSuperview().inset(Margin.Normal)
-            $0.left.equalToSuperview().inset(Margin.Normal)
-            $0.right.equalToSuperview().inset(Margin.Normal)
-            $0.height.equalTo(64)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-Margin.Medium)
+            $0.left.equalToSuperview().inset(Margin.Normal+Margin.Small)
+            $0.right.equalToSuperview().inset(Margin.Normal+Margin.Small)
+            $0.height.equalTo(60)
         }
-        
-        tableView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(Margin.Regular)
-            $0.left.equalToSuperview()
-            $0.right.equalToSuperview()
-            $0.bottom.equalTo(createButton.snp.top).offset(Margin.Normal)
-        }
-        
-        tableView.registClassCell(GenericTableViewCell<FloatingTextField>.self)
-        tableView.dataSource = self
-        tableView.delegate = self
     }
     
-    override func beginAnimate() {
-        let rotation = CATransform3DTranslate(CATransform3DIdentity, 0, 100, 0)
-        bodyContainer.layer.transform = rotation
-        bodyContainer.alpha = 0.5
-        UIView.animate(withDuration: 0.5, delay: 0, options: .allowUserInteraction, animations: { () -> Void in
-            self.bodyContainer.layer.transform = CATransform3DIdentity
-            self.bodyContainer.alpha = 1.0
-        }, completion: nil)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        addTicketPanel.removePanelFromParent(animated: animated)
     }
     
-    override func endAnimate() {
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if ticketNameTextField.frame.origin.y != 0.0, isUpdatedHalfPanelHeight == false {
+            addTicketPanel.updateLayout()
+            isUpdatedHalfPanelHeight = true
+        }
+    }
+    
+    @objc func textFieldChanged(sender: AppTextField) {
+        contentVC.viewModel.name = sender.text
+    }
+    
+    @objc func createTicket(sender: AppButton) {
+        let missingFields = contentVC.viewModel.getMissingTicketInfor()
+        guard missingFields.count == 0 else {
+            showMessage(title: contentVC.viewModel.missingTextMessgage, message: "")
+            return
+        }
+        contentVC.viewModel.addTicket()
     }
 }
 
-extension AddTicketViewController: UITableViewDelegate {
+extension AddTicketViewController: FloatingPanelControllerDelegate {
+    func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
+        var heightTop = view.safeAreaInsets.top
+        if heightTop <= 20 {
+            heightTop = 0
+        }
+        let height = AppScreenSize.screenHeight - heightTop - (ticketNameTextField.frame.origin.y + ticketNameTextField.bounds.size.height + Margin.Normal)
+        return FloatingPanelStocksLayout(halfHeight: height)
+    }
+}
+
+class FloatingPanelStocksLayout: FloatingPanelLayout {
+    var halfHeight: CGFloat!
     
+    init(halfHeight: CGFloat) {
+        self.halfHeight = halfHeight
+    }
+    
+    var initialPosition: FloatingPanelPosition {
+        return .half
+    }
+    
+    func insetFor(position: FloatingPanelPosition) -> CGFloat? {
+        switch position {
+        case .full: return 56.0
+        case .half: return halfHeight
+        default: return nil
+        }
+    }
+    
+    public var supportedPositions: Set<FloatingPanelPosition> {
+        return [.full, .half]
+    }
+    
+    public func prepareLayout(surfaceView: UIView, in view: UIView) -> [NSLayoutConstraint] {
+        return [
+            surfaceView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 8.0),
+            surfaceView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -8.0)
+        ]
+    }
 }

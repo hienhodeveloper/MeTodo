@@ -14,10 +14,15 @@ target 'MeTodo' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   
   pod 'liquid-swipe'
   pod 'FSCalendar'
   pod 'UPCarouselFlowLayout', :git => 'https://github.com/hienhodeveloper/UPCarouselFlowLayout.git'
+  pod 'FloatingPanel'
+  pod 'TagListView'
+  
+  pod 'DeepDiff'
 end

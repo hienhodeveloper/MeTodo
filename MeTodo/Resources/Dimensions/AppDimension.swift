@@ -62,5 +62,6 @@ struct AppImageSize {
 
 struct IconButtonSize {
     static let Regular = CGSize(width: 24, height: 24)
+    static let Hight = CGSize(width: 36, height: 36)
     static let Big = CGSize(width: 60, height: 60)
 }

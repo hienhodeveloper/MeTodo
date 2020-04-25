@@ -10,7 +10,7 @@ import UIKit
 import Rswift
 
 class AppViewController: UIViewController, AppViewControllerProtocol {
-
+    
     var navigationTitle: String? { nil }
     var backgroundColor: UIColor { R.color.appBackgroundColor()! }
     var prefersLargeTitles: Bool { false }
@@ -59,6 +59,16 @@ class AppViewController: UIViewController, AppViewControllerProtocol {
     }
     
     func endAnimate() {
-         
+        
     }
+    
+    func embedInDismissKeyboardView(view: UIView) {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard(_ sender: UIView) {
+        view.endEditing(true)
+    }
+    
 }

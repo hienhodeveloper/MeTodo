@@ -13,26 +13,12 @@ enum AppButtonType {
     case iconWithTitle
     case onlyTitle
 }
-
 class AppButton: UIButton {
-    var buttonStyle: AppButtonType = .onlyTitle {
+    var iconSize: CGSize = IconButtonSize.Regular {
         didSet {
-            switch buttonStyle {
-            case .onlyIcon:
-                titleLabel?.text = nil
-                imageView?.snp.remakeConstraints {
-                    $0.edges.equalToSuperview()
-                }
-            case .iconWithTitle:
-                imageView?.snp.remakeConstraints { make in
-                    make.size.equalTo(IconButtonSize.Regular)
-                    make.right.equalTo(titleLabel!.snp.left).offset(-spaceBetweenIconAndTitle)
-                }
-            case .onlyTitle:
-                imageView?.image = nil
+            imageView?.snp.remakeConstraints {
+                $0.size.equalTo(iconSize)
             }
         }
     }
-    
-    var spaceBetweenIconAndTitle = Spacing.Small
 }

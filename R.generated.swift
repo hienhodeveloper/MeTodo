@@ -105,7 +105,7 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 9 colors.
+  /// This `R.color` struct is generated, and contains static references to 10 colors.
   struct color {
     /// Color `app-background-color`.
     static let appBackgroundColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "app-background-color")
@@ -113,6 +113,8 @@ struct R: Rswift.Validatable {
     static let dimPurpleColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "dim-purple-color")
     /// Color `header-color`.
     static let headerColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "header-color")
+    /// Color `light-blue-color`.
+    static let lightBlueColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "light-blue-color")
     /// Color `light-orange-color`.
     static let lightOrangeColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "light-orange-color")
     /// Color `light-purple-color`.
@@ -150,6 +152,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func headerColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.headerColor, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "light-blue-color", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func lightBlueColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.lightBlueColor, compatibleWith: traitCollection)
     }
     #endif
 
@@ -224,23 +235,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 4 images.
+  /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
-    /// Image `add-tab-icon`.
-    static let addTabIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "add-tab-icon")
     /// Image `left-arrow-icon`.
     static let leftArrowIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "left-arrow-icon")
     /// Image `menu-tab-icon`.
     static let menuTabIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "menu-tab-icon")
     /// Image `task-image`.
     static let taskImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "task-image")
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "add-tab-icon", bundle: ..., traitCollection: ...)`
-    static func addTabIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.addTabIcon, compatibleWith: traitCollection)
-    }
-    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "left-arrow-icon", bundle: ..., traitCollection: ...)`
@@ -268,8 +270,12 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 10 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 11 localization keys.
     struct localization {
+      /// en translation: Category
+      ///
+      /// Locales: en
+      static let category = Rswift.StringResource(key: "Category", tableName: "Localization", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Chat Room
       ///
       /// Locales: en, vi
@@ -310,6 +316,21 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let welcome = Rswift.StringResource(key: "Welcome", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+
+      /// en translation: Category
+      ///
+      /// Locales: en
+      static func category(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Category", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "Category"
+        }
+
+        return NSLocalizedString("Category", tableName: "Localization", bundle: bundle, comment: "")
+      }
 
       /// en translation: Chat Room
       ///

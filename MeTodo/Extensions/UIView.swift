@@ -8,8 +8,36 @@
 
 import UIKit
 
+extension UIEdgeInsets {
+
+    init(horizontal: CGFloat) {
+        self.init(top: 0, left: horizontal, bottom: 0, right: horizontal)
+    }
+    
+    init(vertical: CGFloat) {
+        self.init(top: vertical, left: 0, bottom: vertical, right: 0)
+    }
+    
+    init(onlyBottom bottom: CGFloat) {
+        self.init(top: 0, left: 0, bottom: bottom, right: 0)
+    }
+    
+    init(onlyTop top: CGFloat) {
+        self.init(top: top, left: 0, bottom: 0, right: 0)
+    }
+    
+    init(onlyLeft left: CGFloat) {
+        self.init(top: 0, left: left, bottom: 0, right: 0)
+    }
+    
+    init(onlyRight right: CGFloat) {
+        self.init(top: 0, left: 0, bottom: 0, right: right)
+    }
+    
+}
+
 extension UIView {
-    var cornerRadius: CGFloat {
+    var cornerRad: CGFloat {
         get {
             self.layer.cornerRadius
         }

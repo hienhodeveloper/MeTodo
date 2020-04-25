@@ -28,7 +28,7 @@ class CategoryView: AppView {
     override func setupView() {
         super.setupView()
         backgroundColor = .white
-        cornerRadius = CornerRadius.Medium
+        cornerRad = CornerRadius.Medium
         addSubview(categoryNameLabel)
         categoryNameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(Margin.Normal)

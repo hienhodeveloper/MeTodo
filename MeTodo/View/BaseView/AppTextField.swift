@@ -36,6 +36,8 @@ class AppTextField: UITextField {
             setNeedsDisplay()
         }
     }
+    
+    var isDisablePaste = false
 
     override func draw(_ rect: CGRect) {
 
@@ -51,5 +53,15 @@ class AppTextField: UITextField {
         tintColor.setStroke()
         
         path.stroke()
+    }
+    
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        if isDisablePaste == false {
+            return super.canPerformAction(action, withSender: sender)
+        }
+        if action == #selector(UIResponderStandardEditActions.paste(_:)) {
+            return false
+        }
+        return super.canPerformAction(action, withSender: sender)
     }
 }

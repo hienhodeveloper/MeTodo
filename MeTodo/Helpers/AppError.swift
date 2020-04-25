@@ -22,16 +22,18 @@ struct AppError: Error, Equatable {
             return "Email has been used"
         case .connectionFailed:
             return "Connection Failed"
+        case .permissionDenyFirestore:
+            return "Permission Deny"
         case .none:
-            fatalError("Unidentify Error")
+            return rootDesciption ?? "Unkown Error"
         }
     }
     
-    var rootDesciption: String!
+    var rootDesciption: String?
 
     init(from error: NSError) {
-        errorCode = error.code
         rootDesciption = error.description
+        errorCode = error.code
     }
 }
 
@@ -40,4 +42,5 @@ enum ErrorCode: Int {
     case userNotFound = 205
     case userEmailTaken = 203
     case connectionFailed = 100
+    case permissionDenyFirestore = 7
 }
