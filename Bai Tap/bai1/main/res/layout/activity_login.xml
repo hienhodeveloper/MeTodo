@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#3F51B5"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CSCOM"
+            android:textColor="#FFFFFF"
+            android:textSize="60"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="60"
+            android:layout_marginRight="60"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edtName3"
+                android:layout_width="match_parent"
+                android:layout_height="40"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Tên đăng nhập"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edtName2"
+                android:layout_width="match_parent"
+                android:layout_height="40"
+                android:layout_marginTop="8"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Mật khẩu"
+                android:inputType="textPersonName|textPassword" />
+
+            <Button
+                android:id="@+id/btnDone2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8"
+                android:layout_weight="1"
+                android:background="#673AB7"
+                android:text="đăng nhập "
+                android:textColor="#FFFFFF" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8"
+                android:layout_weight="1"
+                android:text="Lưu thông tin đăng nhập" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>
