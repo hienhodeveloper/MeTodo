@@ -46,7 +46,7 @@ class TicketView: AppView {
     var ticket: Ticket! {
         didSet {
             ticketNameLabel.text = ticket.name
-            dateLabel.text = ticket.getDateTime()
+            dateLabel.text = TimeFormatHelper.string(for: ticket.startingTime, format: "MMM d, HH:mm")
             if ticket.remindMe {
                 ticketTag.icon = UIImage(systemName: "bell")
             } else {

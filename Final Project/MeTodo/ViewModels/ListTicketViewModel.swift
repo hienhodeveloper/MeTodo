@@ -7,15 +7,20 @@
 //
 import Foundation
 import DeepDiff
+import CoreData
 
 protocol ListTicketViewModelDelegate: class {
     func listTicketViewModel(_ viewModel: ListTicketViewModel, didUpdateState state: ViewModelState)
 }
 
 class ListTicketViewModel {
-    var listTicketToday: [Ticket] = []
     
+    var listTicketToday: [Ticket] = []
     var listOtherTicket: [Ticket] = []
+    
+    lazy var context: NSManagedObjectContext = {
+        return (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
+    }()
     
     var numberOfTodayTicket: Int {
         listTicketToday.count
@@ -33,25 +38,28 @@ class ListTicketViewModel {
     
     weak var delegate: ListTicketViewModelDelegate?
     
-    func getListTicket() {
+    func getListTicket(with request: NSFetchRequest<Ticket> = Ticket.fetchRequest()) {
         guard state == .idle else { return }
         state = .loading
-        FirestoreManager.shared.getListTicket(success: { [weak self] listTicket in
-            guard let self = self else { return }
-            self.handleListTicket(listTicket)
-        }, failure: { [weak self] error in
-            self?.state = .error(error)
-        })
+        let request: NSFetchRequest<Ticket> = Ticket.fetchRequest()
+        do {
+            let todoList = try context.fetch(request)
+            handleListTicket(todoList)
+            print("Load success")
+        } catch {
+            print("Load error: \(error)")
+            state = .error(.init(from: error as NSError))
+        }
     }
     
     private func handleListTicket(_ list: [Ticket]) {
         let listTicketToday = list.filter {
-            TimeFormatHelper.isToday(date: $0.startingTime.dateValue())
+            TimeFormatHelper.isToday(date: $0.startingTime!)
         }
         self.listTicketToday = listTicketToday.reversed()
         
         let listOtherTicket = list.filter {
-            !TimeFormatHelper.isToday(date: $0.startingTime.dateValue())
+            !TimeFormatHelper.isToday(date: $0.startingTime!)
         }
        
         self.listOtherTicket = listOtherTicket

@@ -8,10 +8,11 @@
 
 import UIKit
 import TagListView
+import CoreData
 
 protocol CategoryTagListDelegate: class {
     func categoryTagList(_ view: CategoryTagList, didTapAddTag button: AppButton)
-    func categoryTagList(_ view: CategoryTagList, updatedSelectTag tag: CategoryTag?)
+    func categoryTagList(_ view: CategoryTagList, updatedSelectTag tag: Category?)
 }
 
 class CategoryTagList: AppView {
@@ -46,12 +47,12 @@ class CategoryTagList: AppView {
         $0.textColor = R.color.titleTextFieldColor()!
     }
     
-    var categoryTags: [CategoryTag] = [] {
+    var categoryTags: [Category] = [] {
         didSet {
             listTagView.removeAllTags()
             guard categoryTags.count > 0 else { return }
             categoryTags.forEach { tag in
-                let tagView = listTagView.addTag(tag.name)
+                let tagView = listTagView.addTag(tag.name!)
                 tagView.textColor = R.color.dimPurpleColor()!
                 tagView.tagBackgroundColor = UIColor.red.withAlphaComponent(0.1)
             }

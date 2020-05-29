@@ -1,59 +1,73 @@
 //
-//  CategoryTagViewModel.swift
+//  CategoryViewModel.swift
 //  MeTodo
 //
 //  Created by Hien Ho Developer on 4/19/20.
 //  Copyright © 2020 Hien Ho Developer. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import CoreData
 
 protocol CategoryViewModelDelegate: class {
-    func categoryTagViewModel(_ viewModel: CategoryTagViewModel, didUpdateState state: ViewModelState)
+    func CategoryViewModel(_ viewModel: CategoryViewModel, didUpdateState state: ViewModelState)
 }
 
-class CategoryTagViewModel {
+class CategoryViewModel {
     weak var delegate: CategoryViewModelDelegate?
-
-    var listCategoryTag: [CategoryTag] = []
     
-    var numberOfCategoryTag: Int {
-        listCategoryTag.count
+    lazy var context: NSManagedObjectContext = {
+        return (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
+    }()
+    
+    var listCategory: [Category] = []
+    
+    var numberOfCategory: Int {
+        listCategory.count
     }
     
     var state: ViewModelState = .idle {
         didSet {
-            delegate?.categoryTagViewModel(self, didUpdateState: state)
+            delegate?.CategoryViewModel(self, didUpdateState: state)
         }
     }
     
-    func getListCategoryTag() {
+    func getListCategory() {
         guard state == .idle else { return }
         state = .loading
-        FirestoreManager.shared.getListCategoryTag(success: { [weak self] listTag in
-            guard let self = self else { return }
-            self.listCategoryTag.removeAll()
-            self.listCategoryTag = listTag
+        
+        let request: NSFetchRequest<Category> = Category.fetchRequest()
+        do {
+            self.listCategory = try context.fetch(request)
             self.state = .idle
-        }, failure: { [weak self] error in
-            self?.state = .error(error)
-        })
+            print("Load success")
+        } catch {
+            print("Load error: \(error)")
+            state = .error(.init(from: error as NSError))
+        }
     }
     
-    func addCategoryTag(name: String) {
+    func addCategory(name: String) {
         guard state == .idle, !isAvailabelTag(name: name) else { return }
         state = .loading
-        FirestoreManager.shared.addCategoryTag(tag: .init(name: name),success: { [weak self] tag in
-            guard let self = self else { return }
-            self.listCategoryTag.append(tag)
-            self.state = .idle
-        }, failure: { [weak self] error in
-            self?.state = .error(error)
-        })
+        let category = Category(context: context)
+        category.name = name
+        listCategory.append(category)
+        save()
     }
     
     func isAvailabelTag(name: String) -> Bool {
-        return listCategoryTag.first { $0.name == name } != nil
+        return listCategory.first { $0.name == name } != nil
+    }
+    
+    func save() {
+        do {
+            try context.save()
+            print("Save Category success")
+            self.state = .idle
+        } catch {
+            self.state = .error(.init(from: error as NSError))
+        }
     }
 }
 

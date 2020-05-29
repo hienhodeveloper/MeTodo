@@ -143,7 +143,7 @@ extension AddTicketPanelViewController: CategoryViewModelDelegate {
 }
 
 extension AddTicketPanelViewController: CategoryTagListDelegate {
-    func categoryTagList(_ view: CategoryTagList, updatedSelectTag tag: CategoryTag?) {
+    func categoryTagList(_ view: CategoryTagList, updatedSelectTag tag: Category?) {
         viewModel.category = tag
     }
     

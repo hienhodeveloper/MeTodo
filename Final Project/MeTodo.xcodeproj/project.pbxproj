@@ -54,11 +54,7 @@
 		1E4745D424423F9D002B1F27 /* LiquidViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4745D324423F9D002B1F27 /* LiquidViewControllerProtocol.swift */; };
 		1E4745D62442411C002B1F27 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4745D52442411C002B1F27 /* StartViewController.swift */; };
 		1E535892244DFE5F008E0A7B /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E535891244DFE5F008E0A7B /* BaseModel.swift */; };
-		1E5726FB244B3AE200C1A001 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5726FA244B3AE200C1A001 /* FirestoreService.swift */; };
-		1E5726FD244B3B0F00C1A001 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5726FC244B3B0F00C1A001 /* FirestoreManager.swift */; };
 		1E5726FF244B3E3400C1A001 /* ListTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5726FE244B3E3400C1A001 /* ListTicketViewModel.swift */; };
-		1E572701244B404000C1A001 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E572700244B404000C1A001 /* Ticket.swift */; };
-		1E572703244B407F00C1A001 /* CategoryTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E572702244B407F00C1A001 /* CategoryTag.swift */; };
 		1E572705244B4D8E00C1A001 /* TimeFormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E572704244B4D8E00C1A001 /* TimeFormatHelper.swift */; };
 		1E572707244B6BB300C1A001 /* AddTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E572706244B6BB300C1A001 /* AddTicketViewModel.swift */; };
 		1E671F002449D2A500C2F347 /* GenericCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671EFF2449D2A500C2F347 /* GenericCollectionViewCell.swift */; };
@@ -83,6 +79,7 @@
 		1EE98DF424449AC10090764B /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DF324449AC10090764B /* CategoryView.swift */; };
 		1EE98DF724449FBD0090764B /* TicketCategoryCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DF624449FBD0090764B /* TicketCategoryCollection.swift */; };
 		1EE98DF92444A3D90090764B /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DF82444A3D90090764B /* UICollectionView.swift */; };
+		5239CFFF2480B5D3005B4466 /* MeTodo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5239CFFD2480B5D3005B4466 /* MeTodo.xcdatamodeld */; };
 		95CB05D8BDB014C5583CAF93 /* Pods_MeTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5F4EE32348DFBAAC2D3F92 /* Pods_MeTodo.framework */; };
 /* End PBXBuildFile section */
 
@@ -137,11 +134,7 @@
 		1E4745D324423F9D002B1F27 /* LiquidViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidViewControllerProtocol.swift; sourceTree = "<group>"; };
 		1E4745D52442411C002B1F27 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		1E535891244DFE5F008E0A7B /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
-		1E5726FA244B3AE200C1A001 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
-		1E5726FC244B3B0F00C1A001 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		1E5726FE244B3E3400C1A001 /* ListTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTicketViewModel.swift; sourceTree = "<group>"; };
-		1E572700244B404000C1A001 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
-		1E572702244B407F00C1A001 /* CategoryTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTag.swift; sourceTree = "<group>"; };
 		1E572704244B4D8E00C1A001 /* TimeFormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatHelper.swift; sourceTree = "<group>"; };
 		1E572706244B6BB300C1A001 /* AddTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketViewModel.swift; sourceTree = "<group>"; };
 		1E671EFF2449D2A500C2F347 /* GenericCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -166,6 +159,7 @@
 		1EE98DF324449AC10090764B /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		1EE98DF624449FBD0090764B /* TicketCategoryCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCategoryCollection.swift; sourceTree = "<group>"; };
 		1EE98DF82444A3D90090764B /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		5239CFFE2480B5D3005B4466 /* MeTodo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeTodo.xcdatamodel; sourceTree = "<group>"; };
 		6D5F4EE32348DFBAAC2D3F92 /* Pods_MeTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		875C8F987D91A4C47E6AFD1A /* Pods-MeTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeTodo.debug.xcconfig"; path = "Target Support Files/Pods-MeTodo/Pods-MeTodo.debug.xcconfig"; sourceTree = "<group>"; };
 		C4765420E08E708B6B0D2CD1 /* Pods-MeTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeTodo.release.xcconfig"; path = "Target Support Files/Pods-MeTodo/Pods-MeTodo.release.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +198,7 @@
 		1E47452024422978002B1F27 /* MeTodo */ = {
 			isa = PBXGroup;
 			children = (
+				5239CFD92480B559005B4466 /* Core Data */,
 				1E4745C824422DDE002B1F27 /* R.generated.swift */,
 				1E47458A24422D0D002B1F27 /* Analytics */,
 				1E47459A24422D0D002B1F27 /* DataSource */,
@@ -228,8 +223,6 @@
 		1E47455E24422D0D002B1F27 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1E572700244B404000C1A001 /* Ticket.swift */,
-				1E572702244B407F00C1A001 /* CategoryTag.swift */,
 				1E535891244DFE5F008E0A7B /* BaseModel.swift */,
 			);
 			path = Models;
@@ -287,8 +280,6 @@
 			children = (
 				1E47457224422D0D002B1F27 /* FirebaseService.swift */,
 				1E47457324422D0D002B1F27 /* FirebaseManager.swift */,
-				1E5726FA244B3AE200C1A001 /* FirestoreService.swift */,
-				1E5726FC244B3B0F00C1A001 /* FirestoreManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -443,6 +434,14 @@
 				1EE98DF624449FBD0090764B /* TicketCategoryCollection.swift */,
 			);
 			path = "Collection View";
+			sourceTree = "<group>";
+		};
+		5239CFD92480B559005B4466 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				5239CFFD2480B5D3005B4466 /* MeTodo.xcdatamodeld */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		D42B95C3B85B254AB7DCF5D8 /* Frameworks */ = {
@@ -614,7 +613,6 @@
 				1E4745D124423E16002B1F27 /* LiquidViewController.swift in Sources */,
 				1EB5B79D244379290028677E /* AddTicketViewController.swift in Sources */,
 				1EE98DEE244479CA0090764B /* GenericTableViewCell.swift in Sources */,
-				1E572701244B404000C1A001 /* Ticket.swift in Sources */,
 				1EC8396C2442D8B600E7F0BF /* OnboardHeaderView.swift in Sources */,
 				1E4745C324422D0E002B1F27 /* UITextField.swift in Sources */,
 				1E4745B724422D0D002B1F27 /* OnboardRoutes.swift in Sources */,
@@ -626,9 +624,7 @@
 				1E00EF6A24473A190049D0F7 /* FloatingTextField.swift in Sources */,
 				1EB5B79524435CE80028677E /* ListTicketViewController.swift in Sources */,
 				1E572705244B4D8E00C1A001 /* TimeFormatHelper.swift in Sources */,
-				1E5726FB244B3AE200C1A001 /* FirestoreService.swift in Sources */,
 				1E4745A124422D0D002B1F27 /* SignInViewModel.swift in Sources */,
-				1E5726FD244B3B0F00C1A001 /* FirestoreManager.swift in Sources */,
 				1EB5B7932443528B0028677E /* AppNotification.swift in Sources */,
 				1E4745B624422D0D002B1F27 /* OnboardViewController.swift in Sources */,
 				1E4745A424422D0D002B1F27 /* AppDimension.swift in Sources */,
@@ -639,6 +635,7 @@
 				1E4745BB24422D0D002B1F27 /* AnalyticsManager.swift in Sources */,
 				1E4745BC24422D0D002B1F27 /* UIHelper.swift in Sources */,
 				1E4745BA24422D0D002B1F27 /* AnalyticsService.swift in Sources */,
+				5239CFFF2480B5D3005B4466 /* MeTodo.xcdatamodeld in Sources */,
 				1EE98DF92444A3D90090764B /* UICollectionView.swift in Sources */,
 				1EE98DF024448F580090764B /* TagIconView.swift in Sources */,
 				1E4745BE24422D0D002B1F27 /* UIScrollView.swift in Sources */,
@@ -646,7 +643,6 @@
 				1E4745BD24422D0D002B1F27 /* AppConfig.swift in Sources */,
 				1E4745C024422D0E002B1F27 /* UIColor.swift in Sources */,
 				1E4745C524422D0E002B1F27 /* StringExtension.swift in Sources */,
-				1E572703244B407F00C1A001 /* CategoryTag.swift in Sources */,
 				1E4745A724422D0D002B1F27 /* FirebaseManager.swift in Sources */,
 				1EB5B78F2443413A0028677E /* HomeTabBarViewController.swift in Sources */,
 				1E4745B924422D0D002B1F27 /* AnalyticsEvent.swift in Sources */,
@@ -873,6 +869,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5239CFFD2480B5D3005B4466 /* MeTodo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5239CFFE2480B5D3005B4466 /* MeTodo.xcdatamodel */,
+			);
+			currentVersion = 5239CFFE2480B5D3005B4466 /* MeTodo.xcdatamodel */;
+			path = MeTodo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1E47451624422978002B1F27 /* Project object */;
 }

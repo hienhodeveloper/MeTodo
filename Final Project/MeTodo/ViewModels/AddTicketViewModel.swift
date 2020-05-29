@@ -6,7 +6,8 @@
 //  Copyright © 2020 Hien Ho Developer. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import CoreData
 
 protocol AddTicketViewModelDelegate: class {
     func addTicketViewModel(_ viewModel: AddTicketViewModel, didUpdateState state: ViewModelState)
@@ -57,11 +58,15 @@ class AddTicketViewModel {
         }
     }
     
-    var category: CategoryTag? {
+    var category: Category? {
         didSet {
             delegate?.addTicketViewModel(self, didUpdateInputData: TicketInputs.category)
         }
     }
+    
+    lazy var context: NSManagedObjectContext = {
+           return (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
+    }()
     
     var startingTimeInString: String {
         var startTime = "00:00"
@@ -110,25 +115,31 @@ class AddTicketViewModel {
         return message.trimmingCharacters(in: .whitespaces)
     }
     
-    private func makeATicket() -> Ticket {
-        return .init(name: name!,
-                     category: category!.id,
-                     startingTime: .init(date: date),
-                     workingTime: Int(workingTime ?? 0),
-                     isDone: false,
-                     remindMe: remindMe)
-    }
-    
     func addTicket() {
         guard state == .idle else { return }
         state = .loading
-        FirestoreManager.shared.addTicket(ticket: makeATicket(),success: { [weak self] ticket in
-            guard let self = self else { return }
+        
+        let todo = Ticket(context: context)
+        todo.name = name!
+        todo.isDone = false
+        todo.parentCategory = category
+        todo.startingTime = date
+        todo.workingTime = Int32(workingTime ?? 0)
+        todo.remindMe = remindMe
+        
+        saveTodo()
+    }
+    
+    func saveTodo() {
+        do {
+            try context.save()
             self.state = .idle
             AppNavigator.shared.dismiss()
-            }, failure: { [weak self] error in
-                self?.state = .error(error)
-        })
+            print("Save TodoEntity success")
+        } catch {
+            print("Save TodoEntity error: \(error)")
+            self.state = .error(.init(from: error as NSError))
+        }
     }
 }
 

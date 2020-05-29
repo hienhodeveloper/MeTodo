@@ -13,9 +13,10 @@ class AppNavigator: BaseNavigator {
   static let shared = AppNavigator()
 
   init() {
-    let isHaveCurrentUser = Auth.auth().currentUser != nil
-    let initialRoute: Route = isHaveCurrentUser ?
-      HomeRoutes.home : OnboardingRoutes.onboard
+//    let isHaveCurrentUser = Auth.auth().currentUser != nil
+//    let initialRoute: Route = isHaveCurrentUser ?
+//      HomeRoutes.home : OnboardingRoutes.onboard
+    let initialRoute = HomeRoutes.home
     super.init(with: initialRoute)
   }
 
