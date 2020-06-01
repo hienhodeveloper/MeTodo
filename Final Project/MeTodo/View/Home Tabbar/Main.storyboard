@@ -27,14 +27,26 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blS-rf-TRb">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aop-Rw-vJv">
+                                <rect key="frame" x="296" y="46" width="63" height="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
+                                <state key="normal" title="SIGN OUT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapSignOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8aH-2w-vfJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="osF-2b-fVW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="166" id="2tl-pn-6h4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="blS-rf-TRb" secondAttribute="trailing" id="DXn-i9-EZK"/>
+                            <constraint firstItem="aop-Rw-vJv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="GVX-CG-lcO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="blS-rf-TRb" secondAttribute="bottom" id="PnQ-FE-nJV"/>
                             <constraint firstItem="osF-2b-fVW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="iRi-1X-ZjH"/>
                             <constraint firstItem="osF-2b-fVW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="lig-lC-dR4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aop-Rw-vJv" secondAttribute="trailing" constant="16" id="mIm-fI-Ea0"/>
                             <constraint firstItem="blS-rf-TRb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qSJ-6k-cOf"/>
                             <constraint firstItem="blS-rf-TRb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yZZ-uX-cjp"/>
                         </constraints>
@@ -42,6 +54,7 @@
                     </view>
                     <connections>
                         <outlet property="listScrollView" destination="blS-rf-TRb" id="bfG-ar-Qdm"/>
+                        <outlet property="signOutButton" destination="aop-Rw-vJv" id="4op-7R-UQ8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
