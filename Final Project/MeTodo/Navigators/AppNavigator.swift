@@ -13,10 +13,7 @@ class AppNavigator: BaseNavigator {
   static let shared = AppNavigator()
 
   init() {
-    let isHaveCurrentUser = Auth.auth().currentUser != nil
-    let initialRoute: Route = isHaveCurrentUser ?
-      HomeRoutes.home : OnboardingRoutes.onboard
-    super.init(with: initialRoute)
+    super.init(with: HomeRoutes.home)
   }
 
   required init(with route: Route) {

@@ -76,8 +76,8 @@ class AddTaskView: UIView {
     
     private func setConstraints() {
         closeImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(SAFE_BUFFER)
-            make.left.equalTo(15)
+            make.top.equalTo(16)
+            make.left.equalTo(16)
             make.height.width.equalTo(20)
         }
         

@@ -129,7 +129,7 @@ class CustomListViewController: UIViewController {
         }
         
         trashImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(SAFE_BUFFER + 2)
+            make.top.equalTo(16)
             make.height.width.equalTo(18)
             make.right.equalTo(view.snp.right).offset(-15)
         }

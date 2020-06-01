@@ -22,7 +22,6 @@ class HomeViewController: UIViewController {
     private let gradient = CAGradientLayer()
     
     @IBOutlet weak var listScrollView: UIScrollView!
-    @IBOutlet weak var signOutButton: UIButton!
     lazy var timeLabel = UILabel()
     lazy var greetingLabel = UILabel()
     lazy var subtitleLabel = UILabel()
@@ -36,17 +35,6 @@ class HomeViewController: UIViewController {
     private var firstTimer: Timer!
     private var secondTimer: Timer!
     private var taskCount = 0
-    
-    @IBAction func didTapSignOut(_ sender: Any) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-            AppNavigator.shared.navigate(to: OnboardingRoutes.onboard, with: .reset)
-        } catch let signOutError as NSError {
-          print ("Error signing out: %@", signOutError)
-        }
-          
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +57,6 @@ class HomeViewController: UIViewController {
         addLists()
         buildLabels()
         view.bringSubviewToFront(listScrollView)
-        view.bringSubviewToFront(signOutButton)
         // Set initial color scheme
         if (children.count == 0) {
             gradient.colors = [UIColor.black.cgColor, UIColor.black.cgColor]
