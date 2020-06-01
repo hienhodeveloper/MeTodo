@@ -113,13 +113,13 @@ class TaskViewController: UIViewController {
         }
         
         closeImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(SAFE_BUFFER - 25)
+            make.top.equalTo(16)
             make.left.equalTo(15)
             make.height.width.equalTo(20)
         }
 
         trashImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(SAFE_BUFFER - 19)
+            make.top.equalTo(16)
             make.height.width.equalTo(18)
             make.right.equalTo(view.snp.right).offset(-15)
         }

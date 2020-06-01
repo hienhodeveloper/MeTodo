@@ -123,7 +123,7 @@ class CustomListViewController: UIViewController {
     
     private func setConstraints() {
         closeImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(SAFE_BUFFER)
+            make.top.equalTo(16)
             make.left.equalTo(15)
             make.height.width.equalTo(20)
         }
