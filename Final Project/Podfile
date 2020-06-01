@@ -23,6 +23,9 @@ target 'MeTodo' do
   pod 'UPCarouselFlowLayout', :git => 'https://github.com/hienhodeveloper/UPCarouselFlowLayout.git'
   pod 'FloatingPanel'
   pod 'TagListView'
-  
+  pod 'RealmSwift'
   pod 'DeepDiff'
+  pod 'UICountingLabel'
+  pod 'Realm'
+  
 end

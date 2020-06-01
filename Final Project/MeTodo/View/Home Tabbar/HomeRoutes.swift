@@ -21,13 +21,13 @@ enum HomeRoutes: Route {
         }
     }
     
-    private func buildHomeViewController() -> HomeTabBarViewController {
-        let viewController = HomeTabBarViewController()
-        return viewController
+    private func buildHomeViewController() -> UIViewController {
+       let storyboard = UIStoryboard(name: "Main", bundle: nil)
+       let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
+        return vc
     }
     
-    private func buildCreateTicketViewController() -> AddTicketViewController {
-        let viewController = AddTicketViewController()
-        return viewController
+    private func buildCreateTicketViewController() -> UIViewController {
+        return UIViewController()
     }
 }

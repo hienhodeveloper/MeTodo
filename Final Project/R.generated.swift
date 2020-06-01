@@ -89,15 +89,24 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `Main`.
+    static let main = _R.storyboard.main()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Main", bundle: ...)`
+    static func main(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.main)
     }
     #endif
 
@@ -235,19 +244,103 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 3 images.
+  /// This `R.image` struct is generated, and contains static references to 17 images.
   struct image {
+    /// Image `back`.
+    static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "back")
+    /// Image `books`.
+    static let books = Rswift.ImageResource(bundle: R.hostingBundle, name: "books")
+    /// Image `briefcase`.
+    static let briefcase = Rswift.ImageResource(bundle: R.hostingBundle, name: "briefcase")
+    /// Image `check`.
+    static let check = Rswift.ImageResource(bundle: R.hostingBundle, name: "check")
+    /// Image `checklist`.
+    static let checklist = Rswift.ImageResource(bundle: R.hostingBundle, name: "checklist")
+    /// Image `dots`.
+    static let dots = Rswift.ImageResource(bundle: R.hostingBundle, name: "dots")
+    /// Image `launch-background`.
+    static let launchBackground = Rswift.ImageResource(bundle: R.hostingBundle, name: "launch-background")
     /// Image `left-arrow-icon`.
     static let leftArrowIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "left-arrow-icon")
+    /// Image `light`.
+    static let light = Rswift.ImageResource(bundle: R.hostingBundle, name: "light")
     /// Image `menu-tab-icon`.
     static let menuTabIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "menu-tab-icon")
+    /// Image `person`.
+    static let person = Rswift.ImageResource(bundle: R.hostingBundle, name: "person")
+    /// Image `plus`.
+    static let plus = Rswift.ImageResource(bundle: R.hostingBundle, name: "plus")
     /// Image `task-image`.
     static let taskImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "task-image")
+    /// Image `trash`.
+    static let trash = Rswift.ImageResource(bundle: R.hostingBundle, name: "trash")
+    /// Image `uncheck`.
+    static let uncheck = Rswift.ImageResource(bundle: R.hostingBundle, name: "uncheck")
+    /// Image `updown`.
+    static let updown = Rswift.ImageResource(bundle: R.hostingBundle, name: "updown")
+    /// Image `x`.
+    static let x = Rswift.ImageResource(bundle: R.hostingBundle, name: "x")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "back", bundle: ..., traitCollection: ...)`
+    static func back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.back, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "books", bundle: ..., traitCollection: ...)`
+    static func books(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.books, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "briefcase", bundle: ..., traitCollection: ...)`
+    static func briefcase(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.briefcase, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "check", bundle: ..., traitCollection: ...)`
+    static func check(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.check, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "checklist", bundle: ..., traitCollection: ...)`
+    static func checklist(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.checklist, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "dots", bundle: ..., traitCollection: ...)`
+    static func dots(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dots, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "launch-background", bundle: ..., traitCollection: ...)`
+    static func launchBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.launchBackground, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "left-arrow-icon", bundle: ..., traitCollection: ...)`
     static func leftArrowIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.leftArrowIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "light", bundle: ..., traitCollection: ...)`
+    static func light(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.light, compatibleWith: traitCollection)
     }
     #endif
 
@@ -259,9 +352,51 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "person", bundle: ..., traitCollection: ...)`
+    static func person(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.person, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "plus", bundle: ..., traitCollection: ...)`
+    static func plus(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plus, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "task-image", bundle: ..., traitCollection: ...)`
     static func taskImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.taskImage, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "trash", bundle: ..., traitCollection: ...)`
+    static func trash(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.trash, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "uncheck", bundle: ..., traitCollection: ...)`
+    static func uncheck(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.uncheck, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "updown", bundle: ..., traitCollection: ...)`
+    static func updown(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.updown, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "x", bundle: ..., traitCollection: ...)`
+    static func x(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.x, compatibleWith: traitCollection)
     }
     #endif
 
@@ -293,6 +428,26 @@ struct R: Rswift.Validatable {
       }
 
       fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `TaskTableViewCell`.
+    static let taskTableViewCell = _R.nib._TaskTableViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TaskTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.taskTableViewCell) instead")
+    static func taskTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.taskTableViewCell)
+    }
+    #endif
+
+    static func taskTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TaskTableViewCell? {
+      return R.nib.taskTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TaskTableViewCell
     }
 
     fileprivate init() {}
@@ -534,15 +689,48 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _TaskTableViewCell.validate()
+    }
+
+    struct _TaskTableViewCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "TaskTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TaskTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TaskTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "uncheck", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'uncheck' is used in nib 'TaskTableViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
       try launchScreen.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try main.validate()
       #endif
     }
 
@@ -554,8 +742,31 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
 
       static func validate() throws {
+        if UIKit.UIImage(named: "launch-background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'launch-background' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = HomeViewController
+
+      let bundle = R.hostingBundle
+      let homeViewController = StoryboardViewControllerResource<HomeViewController>(identifier: "HomeViewController")
+      let name = "Main"
+
+      func homeViewController(_: Void = ()) -> HomeViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: homeViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.main().homeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'homeViewController' could not be loaded from storyboard 'Main' as 'HomeViewController'.") }
       }
 
       fileprivate init() {}

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1E00EF6A24473A190049D0F7 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E00EF6924473A190049D0F7 /* FloatingTextField.swift */; };
-		1E00EF7224475DCF0049D0F7 /* AddTicketPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E00EF7124475DCF0049D0F7 /* AddTicketPanelViewController.swift */; };
-		1E00EF762447841C0049D0F7 /* RemindMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E00EF752447841C0049D0F7 /* RemindMeView.swift */; };
 		1E47452224422978002B1F27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47452124422978002B1F27 /* AppDelegate.swift */; };
 		1E47452424422978002B1F27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47452324422978002B1F27 /* SceneDelegate.swift */; };
 		1E47452B2442297B002B1F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E47452A2442297B002B1F27 /* Assets.xcassets */; };
@@ -54,39 +52,39 @@
 		1E4745D424423F9D002B1F27 /* LiquidViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4745D324423F9D002B1F27 /* LiquidViewControllerProtocol.swift */; };
 		1E4745D62442411C002B1F27 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4745D52442411C002B1F27 /* StartViewController.swift */; };
 		1E535892244DFE5F008E0A7B /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E535891244DFE5F008E0A7B /* BaseModel.swift */; };
-		1E5726FF244B3E3400C1A001 /* ListTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5726FE244B3E3400C1A001 /* ListTicketViewModel.swift */; };
 		1E572705244B4D8E00C1A001 /* TimeFormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E572704244B4D8E00C1A001 /* TimeFormatHelper.swift */; };
-		1E572707244B6BB300C1A001 /* AddTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E572706244B6BB300C1A001 /* AddTicketViewModel.swift */; };
 		1E671F002449D2A500C2F347 /* GenericCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671EFF2449D2A500C2F347 /* GenericCollectionViewCell.swift */; };
-		1E671F022449F72300C2F347 /* CategoryTagList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671F012449F72300C2F347 /* CategoryTagList.swift */; };
-		1E79F3E0244AE1C000CCEC12 /* AddTicketPanelVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E79F3DF244AE1C000CCEC12 /* AddTicketPanelVC+Extension.swift */; };
-		1EB30F46244C89D500024906 /* CategoryTagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB30F45244C89D500024906 /* CategoryTagViewModel.swift */; };
 		1EB5B78B244312940028677E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5B78A244312940028677E /* UIViewController.swift */; };
 		1EB5B78D24431DD30028677E /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5B78C24431DD30028677E /* SignUpViewModel.swift */; };
-		1EB5B78F2443413A0028677E /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5B78E2443413A0028677E /* HomeTabBarViewController.swift */; };
 		1EB5B7912443461B0028677E /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5B7902443461B0028677E /* AppError.swift */; };
 		1EB5B7932443528B0028677E /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5B7922443528B0028677E /* AppNotification.swift */; };
-		1EB5B79524435CE80028677E /* ListTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5B79424435CE80028677E /* ListTicketViewController.swift */; };
-		1EB5B798244372050028677E /* TicketTabRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5B797244372050028677E /* TicketTabRoutes.swift */; };
-		1EB5B79D244379290028677E /* AddTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5B79C244379290028677E /* AddTicketViewController.swift */; };
 		1EB5B79F2443859F0028677E /* TicketCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5B79E2443859F0028677E /* TicketCalendarView.swift */; };
 		1EC8396C2442D8B600E7F0BF /* OnboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8396B2442D8B600E7F0BF /* OnboardHeaderView.swift */; };
-		1EE98DE3244476EA0090764B /* ListTicketViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DE2244476EA0090764B /* ListTicketViewController+Extension.swift */; };
-		1EE98DEA2444780A0090764B /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DE92444780A0090764B /* TicketView.swift */; };
 		1EE98DEE244479CA0090764B /* GenericTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DEC244479CA0090764B /* GenericTableViewCell.swift */; };
 		1EE98DF024448F580090764B /* TagIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DEF24448F580090764B /* TagIconView.swift */; };
 		1EE98DF22444962C0090764B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DF12444962C0090764B /* HeaderView.swift */; };
-		1EE98DF424449AC10090764B /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DF324449AC10090764B /* CategoryView.swift */; };
-		1EE98DF724449FBD0090764B /* TicketCategoryCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DF624449FBD0090764B /* TicketCategoryCollection.swift */; };
 		1EE98DF92444A3D90090764B /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE98DF82444A3D90090764B /* UICollectionView.swift */; };
+		520C70162484ABA000E70888 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C70142484ABA000E70888 /* TaskList.swift */; };
+		520C70172484ABA000E70888 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C70152484ABA000E70888 /* Task.swift */; };
+		520C701F2484AD8D00E70888 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C70182484AD8C00E70888 /* AddTaskView.swift */; };
+		520C70202484AD8D00E70888 /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520C70192484AD8C00E70888 /* TaskTableViewCell.xib */; };
+		520C70212484AD8D00E70888 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C701A2484AD8C00E70888 /* TaskTableViewCell.swift */; };
+		520C70222484AD8D00E70888 /* CustomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C701B2484AD8D00E70888 /* CustomListViewController.swift */; };
+		520C70232484AD8D00E70888 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C701C2484AD8D00E70888 /* TaskViewController.swift */; };
+		520C70242484AD8D00E70888 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C701D2484AD8D00E70888 /* ListViewController.swift */; };
+		520C70252484AD8D00E70888 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C701E2484AD8D00E70888 /* HomeViewController.swift */; };
+		520C70272484ADA100E70888 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520C70262484ADA100E70888 /* Main.storyboard */; };
+		520C702B2484ADEB00E70888 /* UIDevice+Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C70282484ADEB00E70888 /* UIDevice+Todo.swift */; };
+		520C702C2484ADEB00E70888 /* UIColor+Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C70292484ADEB00E70888 /* UIColor+Todo.swift */; };
+		520C702D2484ADEB00E70888 /* UIView+Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C702A2484ADEB00E70888 /* UIView+Todo.swift */; };
+		520C70302484AE1700E70888 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C702E2484AE1700E70888 /* Constants.swift */; };
+		520C70312484AE1700E70888 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C702F2484AE1700E70888 /* Helpers.swift */; };
 		5239CFFF2480B5D3005B4466 /* MeTodo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5239CFFD2480B5D3005B4466 /* MeTodo.xcdatamodeld */; };
 		95CB05D8BDB014C5583CAF93 /* Pods_MeTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5F4EE32348DFBAAC2D3F92 /* Pods_MeTodo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1E00EF6924473A190049D0F7 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
-		1E00EF7124475DCF0049D0F7 /* AddTicketPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketPanelViewController.swift; sourceTree = "<group>"; };
-		1E00EF752447841C0049D0F7 /* RemindMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindMeView.swift; sourceTree = "<group>"; };
 		1E47451E24422978002B1F27 /* MeTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E47452124422978002B1F27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E47452324422978002B1F27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,31 +132,33 @@
 		1E4745D324423F9D002B1F27 /* LiquidViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidViewControllerProtocol.swift; sourceTree = "<group>"; };
 		1E4745D52442411C002B1F27 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		1E535891244DFE5F008E0A7B /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
-		1E5726FE244B3E3400C1A001 /* ListTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTicketViewModel.swift; sourceTree = "<group>"; };
 		1E572704244B4D8E00C1A001 /* TimeFormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatHelper.swift; sourceTree = "<group>"; };
-		1E572706244B6BB300C1A001 /* AddTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketViewModel.swift; sourceTree = "<group>"; };
 		1E671EFF2449D2A500C2F347 /* GenericCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewCell.swift; sourceTree = "<group>"; };
-		1E671F012449F72300C2F347 /* CategoryTagList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTagList.swift; sourceTree = "<group>"; };
-		1E79F3DF244AE1C000CCEC12 /* AddTicketPanelVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTicketPanelVC+Extension.swift"; sourceTree = "<group>"; };
-		1EB30F45244C89D500024906 /* CategoryTagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTagViewModel.swift; sourceTree = "<group>"; };
 		1EB5B78A244312940028677E /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		1EB5B78C24431DD30028677E /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
-		1EB5B78E2443413A0028677E /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
 		1EB5B7902443461B0028677E /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		1EB5B7922443528B0028677E /* AppNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNotification.swift; sourceTree = "<group>"; };
-		1EB5B79424435CE80028677E /* ListTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTicketViewController.swift; sourceTree = "<group>"; };
-		1EB5B797244372050028677E /* TicketTabRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTabRoutes.swift; sourceTree = "<group>"; };
-		1EB5B79C244379290028677E /* AddTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketViewController.swift; sourceTree = "<group>"; };
 		1EB5B79E2443859F0028677E /* TicketCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCalendarView.swift; sourceTree = "<group>"; };
 		1EC8396B2442D8B600E7F0BF /* OnboardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardHeaderView.swift; sourceTree = "<group>"; };
-		1EE98DE2244476EA0090764B /* ListTicketViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListTicketViewController+Extension.swift"; sourceTree = "<group>"; };
-		1EE98DE92444780A0090764B /* TicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
 		1EE98DEC244479CA0090764B /* GenericTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTableViewCell.swift; sourceTree = "<group>"; };
 		1EE98DEF24448F580090764B /* TagIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagIconView.swift; sourceTree = "<group>"; };
 		1EE98DF12444962C0090764B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		1EE98DF324449AC10090764B /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
-		1EE98DF624449FBD0090764B /* TicketCategoryCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCategoryCollection.swift; sourceTree = "<group>"; };
 		1EE98DF82444A3D90090764B /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		520C70142484ABA000E70888 /* TaskList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
+		520C70152484ABA000E70888 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		520C70182484AD8C00E70888 /* AddTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		520C70192484AD8C00E70888 /* TaskTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
+		520C701A2484AD8C00E70888 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		520C701B2484AD8D00E70888 /* CustomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomListViewController.swift; sourceTree = "<group>"; };
+		520C701C2484AD8D00E70888 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		520C701D2484AD8D00E70888 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		520C701E2484AD8D00E70888 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		520C70262484ADA100E70888 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		520C70282484ADEB00E70888 /* UIDevice+Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIDevice+Todo.swift"; path = "../../../../Todo-List-App-Swift/Todo/Extensions/UIDevice+Todo.swift"; sourceTree = "<group>"; };
+		520C70292484ADEB00E70888 /* UIColor+Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Todo.swift"; path = "../../../../Todo-List-App-Swift/Todo/Extensions/UIColor+Todo.swift"; sourceTree = "<group>"; };
+		520C702A2484ADEB00E70888 /* UIView+Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Todo.swift"; path = "../../../../Todo-List-App-Swift/Todo/Extensions/UIView+Todo.swift"; sourceTree = "<group>"; };
+		520C702E2484AE1700E70888 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		520C702F2484AE1700E70888 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		5239CFFE2480B5D3005B4466 /* MeTodo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeTodo.xcdatamodel; sourceTree = "<group>"; };
 		6D5F4EE32348DFBAAC2D3F92 /* Pods_MeTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		875C8F987D91A4C47E6AFD1A /* Pods-MeTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeTodo.debug.xcconfig"; path = "Target Support Files/Pods-MeTodo/Pods-MeTodo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -223,6 +223,8 @@
 		1E47455E24422D0D002B1F27 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				520C70152484ABA000E70888 /* Task.swift */,
+				520C70142484ABA000E70888 /* TaskList.swift */,
 				1E535891244DFE5F008E0A7B /* BaseModel.swift */,
 			);
 			path = Models;
@@ -234,9 +236,6 @@
 				1E47456424422D0D002B1F27 /* AppViewModel.swift */,
 				1E47456624422D0D002B1F27 /* SignInViewModel.swift */,
 				1EB5B78C24431DD30028677E /* SignUpViewModel.swift */,
-				1E5726FE244B3E3400C1A001 /* ListTicketViewModel.swift */,
-				1E572706244B6BB300C1A001 /* AddTicketViewModel.swift */,
-				1EB30F45244C89D500024906 /* CategoryTagViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -289,7 +288,6 @@
 			children = (
 				1E47458624422D0D002B1F27 /* Onboarding */,
 				1E47457524422D0D002B1F27 /* Home Tabbar */,
-				1EB5B796244371BC0028677E /* Tab List Ticket  */,
 				1E47458424422D0D002B1F27 /* CustomView */,
 				1E47457A24422D0D002B1F27 /* BaseView */,
 			);
@@ -299,11 +297,15 @@
 		1E47457524422D0D002B1F27 /* Home Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				520C70262484ADA100E70888 /* Main.storyboard */,
+				520C70182484AD8C00E70888 /* AddTaskView.swift */,
+				520C701B2484AD8D00E70888 /* CustomListViewController.swift */,
+				520C701E2484AD8D00E70888 /* HomeViewController.swift */,
+				520C701D2484AD8D00E70888 /* ListViewController.swift */,
+				520C701A2484AD8C00E70888 /* TaskTableViewCell.swift */,
+				520C70192484AD8C00E70888 /* TaskTableViewCell.xib */,
+				520C701C2484AD8D00E70888 /* TaskViewController.swift */,
 				1E47457824422D0D002B1F27 /* HomeRoutes.swift */,
-				1EB5B78E2443413A0028677E /* HomeTabBarViewController.swift */,
-				1EB5B79C244379290028677E /* AddTicketViewController.swift */,
-				1E00EF7124475DCF0049D0F7 /* AddTicketPanelViewController.swift */,
-				1E79F3DF244AE1C000CCEC12 /* AddTicketPanelVC+Extension.swift */,
 			);
 			path = "Home Tabbar";
 			sourceTree = "<group>";
@@ -362,6 +364,8 @@
 		1E47458E24422D0D002B1F27 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				520C702E2484AE1700E70888 /* Constants.swift */,
+				520C702F2484AE1700E70888 /* Helpers.swift */,
 				1E47458F24422D0D002B1F27 /* UIHelper.swift */,
 				1E47459024422D0D002B1F27 /* AppConfig.swift */,
 				1EB5B7902443461B0028677E /* AppError.swift */,
@@ -374,6 +378,9 @@
 		1E47459124422D0D002B1F27 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				520C70292484ADEB00E70888 /* UIColor+Todo.swift */,
+				520C702A2484ADEB00E70888 /* UIView+Todo.swift */,
+				520C70282484ADEB00E70888 /* UIDevice+Todo.swift */,
 				1E47459224422D0D002B1F27 /* UIScrollView.swift */,
 				1E47459324422D0D002B1F27 /* UIView.swift */,
 				1E47459424422D0D002B1F27 /* UIColor.swift */,
@@ -406,24 +413,10 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		1EB5B796244371BC0028677E /* Tab List Ticket  */ = {
-			isa = PBXGroup;
-			children = (
-				1EB5B797244372050028677E /* TicketTabRoutes.swift */,
-				1EB5B79424435CE80028677E /* ListTicketViewController.swift */,
-				1EE98DE2244476EA0090764B /* ListTicketViewController+Extension.swift */,
-			);
-			path = "Tab List Ticket ";
-			sourceTree = "<group>";
-		};
 		1EE98DE8244477EE0090764B /* Cell Views */ = {
 			isa = PBXGroup;
 			children = (
-				1E00EF752447841C0049D0F7 /* RemindMeView.swift */,
 				1EE98DF12444962C0090764B /* HeaderView.swift */,
-				1EE98DE92444780A0090764B /* TicketView.swift */,
-				1EE98DF324449AC10090764B /* CategoryView.swift */,
-				1E671F012449F72300C2F347 /* CategoryTagList.swift */,
 			);
 			path = "Cell Views";
 			sourceTree = "<group>";
@@ -431,7 +424,6 @@
 		1EE98DF524449F7D0090764B /* Collection View */ = {
 			isa = PBXGroup;
 			children = (
-				1EE98DF624449FBD0090764B /* TicketCategoryCollection.swift */,
 			);
 			path = "Collection View";
 			sourceTree = "<group>";
@@ -526,7 +518,9 @@
 				1E47452E2442297B002B1F27 /* LaunchScreen.storyboard in Resources */,
 				1E4745A524422D0D002B1F27 /* Localization.strings in Resources */,
 				1E47452B2442297B002B1F27 /* Assets.xcassets in Resources */,
+				520C70272484ADA100E70888 /* Main.storyboard in Resources */,
 				1E4745CB24422EA4002B1F27 /* GoogleService-Info.plist in Resources */,
+				520C70202484AD8D00E70888 /* TaskTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,73 +593,71 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E4745C424422D0E002B1F27 /* UIImage.swift in Sources */,
-				1E5726FF244B3E3400C1A001 /* ListTicketViewModel.swift in Sources */,
+				520C70162484ABA000E70888 /* TaskList.swift in Sources */,
 				1E4745A224422D0D002B1F27 /* AppNavigator.swift in Sources */,
 				1EB5B7912443461B0028677E /* AppError.swift in Sources */,
-				1EE98DF424449AC10090764B /* CategoryView.swift in Sources */,
-				1EB5B798244372050028677E /* TicketTabRoutes.swift in Sources */,
 				1E4745CF24423CD2002B1F27 /* AppViewControllerProtocol.swift in Sources */,
 				1EB5B78D24431DD30028677E /* SignUpViewModel.swift in Sources */,
 				1E4745CD24423A97002B1F27 /* SignUpViewController.swift in Sources */,
 				1E4745AE24422D0D002B1F27 /* AppViewController.swift in Sources */,
-				1E572707244B6BB300C1A001 /* AddTicketViewModel.swift in Sources */,
 				1E4745B424422D0D002B1F27 /* AppStackView.swift in Sources */,
 				1E4745D124423E16002B1F27 /* LiquidViewController.swift in Sources */,
-				1EB5B79D244379290028677E /* AddTicketViewController.swift in Sources */,
 				1EE98DEE244479CA0090764B /* GenericTableViewCell.swift in Sources */,
+				520C702C2484ADEB00E70888 /* UIColor+Todo.swift in Sources */,
 				1EC8396C2442D8B600E7F0BF /* OnboardHeaderView.swift in Sources */,
 				1E4745C324422D0E002B1F27 /* UITextField.swift in Sources */,
 				1E4745B724422D0D002B1F27 /* OnboardRoutes.swift in Sources */,
 				1E4745A624422D0D002B1F27 /* FirebaseService.swift in Sources */,
 				1E4745B224422D0D002B1F27 /* AppButton.swift in Sources */,
 				1E4745BF24422D0E002B1F27 /* UIView.swift in Sources */,
+				520C70232484AD8D00E70888 /* TaskViewController.swift in Sources */,
 				1E47459F24422D0D002B1F27 /* AppViewModel.swift in Sources */,
 				1E4745A324422D0D002B1F27 /* Navigator.swift in Sources */,
+				520C70222484AD8D00E70888 /* CustomListViewController.swift in Sources */,
 				1E00EF6A24473A190049D0F7 /* FloatingTextField.swift in Sources */,
-				1EB5B79524435CE80028677E /* ListTicketViewController.swift in Sources */,
+				520C70302484AE1700E70888 /* Constants.swift in Sources */,
 				1E572705244B4D8E00C1A001 /* TimeFormatHelper.swift in Sources */,
 				1E4745A124422D0D002B1F27 /* SignInViewModel.swift in Sources */,
+				520C702D2484ADEB00E70888 /* UIView+Todo.swift in Sources */,
 				1EB5B7932443528B0028677E /* AppNotification.swift in Sources */,
 				1E4745B624422D0D002B1F27 /* OnboardViewController.swift in Sources */,
 				1E4745A424422D0D002B1F27 /* AppDimension.swift in Sources */,
-				1E79F3E0244AE1C000CCEC12 /* AddTicketPanelVC+Extension.swift in Sources */,
 				1E4745B124422D0D002B1F27 /* AppLabel.swift in Sources */,
 				1E671F002449D2A500C2F347 /* GenericCollectionViewCell.swift in Sources */,
 				1E4745D424423F9D002B1F27 /* LiquidViewControllerProtocol.swift in Sources */,
 				1E4745BB24422D0D002B1F27 /* AnalyticsManager.swift in Sources */,
 				1E4745BC24422D0D002B1F27 /* UIHelper.swift in Sources */,
 				1E4745BA24422D0D002B1F27 /* AnalyticsService.swift in Sources */,
+				520C70252484AD8D00E70888 /* HomeViewController.swift in Sources */,
 				5239CFFF2480B5D3005B4466 /* MeTodo.xcdatamodeld in Sources */,
 				1EE98DF92444A3D90090764B /* UICollectionView.swift in Sources */,
+				520C70312484AE1700E70888 /* Helpers.swift in Sources */,
+				520C702B2484ADEB00E70888 /* UIDevice+Todo.swift in Sources */,
 				1EE98DF024448F580090764B /* TagIconView.swift in Sources */,
+				520C70212484AD8D00E70888 /* TaskTableViewCell.swift in Sources */,
 				1E4745BE24422D0D002B1F27 /* UIScrollView.swift in Sources */,
-				1E671F022449F72300C2F347 /* CategoryTagList.swift in Sources */,
+				520C70242484AD8D00E70888 /* ListViewController.swift in Sources */,
 				1E4745BD24422D0D002B1F27 /* AppConfig.swift in Sources */,
 				1E4745C024422D0E002B1F27 /* UIColor.swift in Sources */,
 				1E4745C524422D0E002B1F27 /* StringExtension.swift in Sources */,
 				1E4745A724422D0D002B1F27 /* FirebaseManager.swift in Sources */,
-				1EB5B78F2443413A0028677E /* HomeTabBarViewController.swift in Sources */,
 				1E4745B924422D0D002B1F27 /* AnalyticsEvent.swift in Sources */,
-				1EB30F46244C89D500024906 /* CategoryTagViewModel.swift in Sources */,
+				520C70172484ABA000E70888 /* Task.swift in Sources */,
 				1E4745C924422DDE002B1F27 /* R.generated.swift in Sources */,
-				1EE98DF724449FBD0090764B /* TicketCategoryCollection.swift in Sources */,
+				520C701F2484AD8D00E70888 /* AddTaskView.swift in Sources */,
 				1E535892244DFE5F008E0A7B /* BaseModel.swift in Sources */,
 				1E4745AC24422D0D002B1F27 /* AppImageView.swift in Sources */,
 				1E4745AD24422D0D002B1F27 /* AppView.swift in Sources */,
 				1E47452224422978002B1F27 /* AppDelegate.swift in Sources */,
 				1E4745B824422D0D002B1F27 /* SignInViewController.swift in Sources */,
-				1EE98DEA2444780A0090764B /* TicketView.swift in Sources */,
 				1E4745AA24422D0D002B1F27 /* HomeRoutes.swift in Sources */,
 				1EB5B78B244312940028677E /* UIViewController.swift in Sources */,
 				1EE98DF22444962C0090764B /* HeaderView.swift in Sources */,
 				1E4745D62442411C002B1F27 /* StartViewController.swift in Sources */,
 				1E4745C124422D0E002B1F27 /* NSObject.swift in Sources */,
 				1E47452424422978002B1F27 /* SceneDelegate.swift in Sources */,
-				1E00EF762447841C0049D0F7 /* RemindMeView.swift in Sources */,
 				1EB5B79F2443859F0028677E /* TicketCalendarView.swift in Sources */,
-				1EE98DE3244476EA0090764B /* ListTicketViewController+Extension.swift in Sources */,
 				1E4745AF24422D0D002B1F27 /* AppTextField.swift in Sources */,
-				1E00EF7224475DCF0049D0F7 /* AddTicketPanelViewController.swift in Sources */,
 				1E4745C224422D0E002B1F27 /* UITableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

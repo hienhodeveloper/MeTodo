@@ -59,13 +59,13 @@ extension OnboardViewController: LiquidSwipeContainerDataSource{
 
 extension OnboardViewController: StartViewControllerDelegate {
     func startViewController(_ controller: StartViewController, didTapSignIn button: AppButton) {
-        handleTapNextButton()
+       
     }
 }
 
 extension OnboardViewController: SignInViewControllerDelegate {
     func signInViewController(_ controller: SignInViewController, didTapSignUp button: AppButton) {
-        handleTapNextButton()
+        
     }
 }
 
