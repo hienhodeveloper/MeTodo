@@ -399,7 +399,7 @@ class ListViewController: UIViewController {
         delegate?.updateTodoTotal(incrementBy: 1)
         setTodosLabel()
         
-        MeNotificationManager.shared.addNotification(title: text, date: date)
+        MeNotificationManager.shared.addNotification(title: "\(text) - \(TaskLevel.allCases[level].text)", date: date)
         MeNotificationManager.shared.scheduleNotifications()
     }
     

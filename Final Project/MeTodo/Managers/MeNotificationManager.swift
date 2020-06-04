@@ -51,8 +51,8 @@ class MeNotificationManager {
         for notification in notifications {
             let content = UNMutableNotificationContent()
             content.title = notification.title
-            
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: notification.date.timeIntervalSince1970, repeats: false)
+            let mili = notification.date.timeIntervalSince1970 - Date().timeIntervalSince1970
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: mili, repeats: false)
             let request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)
             
             UNUserNotificationCenter.current().add(request) { error in
