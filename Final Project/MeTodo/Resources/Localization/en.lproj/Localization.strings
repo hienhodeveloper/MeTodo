@@ -5,14 +5,32 @@
   Created by Hien Ho Developer on 4/5/20.
   Copyright © 2020 Hien Ho Developer. All rights reserved.
 */
-"SignIn" = "Sign In";
-"LetSignIn" = "Let's sign in!";
-"SignUp" = "Sign Up";
-"LetSignUp" = "Let's sign up!";
-"BackSignIn" = "Go back";
-"Welcome" = "Welcome";
-"Email" = "Email";
-"Password" = "Password";
+
+"GoodMorning" = "Good morning.";
+"GoodAfternoon" = "Good afternoon.";
+"GoodEvening" = "Good evening.";
+
+"TaskMessage" = "You have %d %@ to do";
+"Task" = "task";
+"Tasks" = "tasks";
+
+"Completed" = "completed";
+"Note" = "Note";
+"AddNote" = "Add a note";
+
+"Icon" = "Icon";
+"Color" = "Color";
+"Title" = "Title";
+
+"Save" = "Save";
+"AskTodo" = "What do you need to do?";
+"NewTask" = "New Task";
+
+"Date" = "Date";
 "Done" = "Done";
-"ChatRoom" = "Chat Room";
-"Category" = "Category";
+
+"Level" = "Level";
+
+"Low" = "Low";
+"Medium" = "Medium";
+"Hight" = "Hight";

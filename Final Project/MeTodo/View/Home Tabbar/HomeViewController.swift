@@ -35,7 +35,10 @@ class HomeViewController: UIViewController {
     private var firstTimer: Timer!
     private var secondTimer: Timer!
     private var taskCount = 0
-    
+        
+    @IBAction func didTapSetting(_ sender: Any) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -95,13 +98,13 @@ class HomeViewController: UIViewController {
         let hour = dateComponents.hour!
         switch (hour) {
         case _ where hour > 3 && hour < 12:
-            greetingLabel.text = "Good morning."
+            greetingLabel.text = R.string.localization.goodMorning()
             break
         case _ where hour > 11 && hour < 17:
-            greetingLabel.text = "Good afternoon."
+            greetingLabel.text = R.string.localization.goodAfternoon()
             break
         default:
-            greetingLabel.text = "Good evening."
+            greetingLabel.text = R.string.localization.goodEvening()
         }
     }
     
@@ -130,8 +133,7 @@ class HomeViewController: UIViewController {
         taskCount = realm.objects(TaskList.self).flatMap({$0.activeTasks}).count
         subtitleLabel.font = getPrimaryFont(.regular, size: 15)
         subtitleLabel.textColor = .white
-        subtitleLabel.text = "You have " + String(taskCount) + (taskCount == 1 ? " task " : " tasks ") + "to do."
-        
+        subtitleLabel.text = R.string.localization.taskMessage(taskCount, (taskCount == 1 ? R.string.localization.task() : R.string.localization.tasks()))
         setTimes()
         view.addSubviews([dateLabel, timeLabel, greetingLabel, subtitleLabel])
         setConstraints()

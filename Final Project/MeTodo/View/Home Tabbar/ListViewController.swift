@@ -338,7 +338,7 @@ class ListViewController: UIViewController {
     }
     
     private func setTodosLabel() {
-        todosLabel.text = String(taskList.activeTasks.count) + (taskList.activeTasks.count == 1 ? " Task" : " Tasks")
+        todosLabel.text = String(taskList.activeTasks.count) + (taskList.activeTasks.count == 1 ? " \(R.string.localization.task())": " \(R.string.localization.tasks())")
     }
     
     private func setProgress() {
@@ -376,10 +376,17 @@ class ListViewController: UIViewController {
     private func commitTask() {
         let realm = try! Realm()
         guard let text = addTaskView.textView.text else { return }
+        guard let _ = addTaskView.dateTextField.text else { return }
+        guard let _ = addTaskView.levelTextField.text else { return }
+        let level = addTaskView.levelPicker.selectedRow(inComponent: 0)
+        let levelTask = TaskLevel.allCases[level].rawValue
+        let date = addTaskView.datePicker.date
         guard text != "" else { return }
         
         let task = Task()
         task.text = text
+        task.level = levelTask
+        task.dueDate = date
         try! realm.write {
             taskList.activeTasks.insert(task, at: 0)
         }
@@ -391,6 +398,9 @@ class ListViewController: UIViewController {
         addTaskView.textView.text = ""
         delegate?.updateTodoTotal(incrementBy: 1)
         setTodosLabel()
+        
+        MeNotificationManager.shared.addNotification(title: text, date: date)
+        MeNotificationManager.shared.scheduleNotifications()
     }
     
     @objc func minimizeFromBackButton() {
@@ -475,7 +485,7 @@ extension ListViewController: UITableViewDataSource {
         if (section == 0) {
             label.text = "TODO"
         } else {
-            label.text = "COMPLETED"
+            label.text = R.string.localization.completed().uppercased()
         }
         
         label.font = getPrimaryFont(.medium, size: 12)

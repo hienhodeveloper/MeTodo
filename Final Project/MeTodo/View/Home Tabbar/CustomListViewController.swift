@@ -95,15 +95,15 @@ class CustomListViewController: UIViewController {
         colorCollectionView.dataSource = self
         colorCollectionView.delegate = self
     
-        iconLabel.text = "ICON"
+        iconLabel.text = R.string.localization.icon().uppercased()
         iconLabel.textColor = .lightGray
         iconLabel.font = getPrimaryFont(.medium, size: 12)
         
-        colorLabel.text = "COLOR"
+        colorLabel.text = R.string.localization.color().uppercased()
         colorLabel.textColor = .lightGray
         colorLabel.font = getPrimaryFont(.medium, size: 12)
         
-        titleLabel.text = "TITLE"
+        titleLabel.text = R.string.localization.title().uppercased()
         titleLabel.textColor = .lightGray
         titleLabel.font = getPrimaryFont(.medium, size: 12)
         
@@ -113,7 +113,7 @@ class CustomListViewController: UIViewController {
         listTitleTextField.tintColor = colorSchemes[colorSchemeId]["secondary"]
         listTitleTextField.addTarget(self, action: #selector(titleDidChange), for: .allEditingEvents)
         
-        saveButton.setTitle("SAVE", for: .normal)
+        saveButton.setTitle(R.string.localization.save().uppercased(), for: .normal)
         saveButton.backgroundColor = listTitleTextField.text == "" ? .superLightGray : colorSchemes[colorSchemeId]["secondary"]
         saveButton.titleLabel?.font = getPrimaryFont(.bold, size: 12)
         saveButton.addTarget(self, action: #selector(commitTaskList), for: .touchUpInside)

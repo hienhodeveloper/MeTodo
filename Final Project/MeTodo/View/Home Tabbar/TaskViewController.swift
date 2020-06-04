@@ -64,7 +64,7 @@ class TaskViewController: UIViewController {
         
         var statusText = "TODO"
         if (completed) {
-            statusText = "COMPLETED"
+            statusText = R.string.localization.completed().uppercased()
         }
         
         statusLabel.text = statusText
@@ -80,7 +80,7 @@ class TaskViewController: UIViewController {
         taskTextView.showsVerticalScrollIndicator = false
         taskTextView.delegate = self
         
-        noteLabel.text = "NOTE"
+        noteLabel.text = R.string.localization.note().uppercased()
         noteLabel.textColor = .lightGray
         noteLabel.font = getPrimaryFont(.medium, size: 12)
         
@@ -93,7 +93,7 @@ class TaskViewController: UIViewController {
         noteTextView.showsVerticalScrollIndicator = false
         noteTextView.delegate = self
         
-        textViewPlaceholder.text = "Add a note"
+        textViewPlaceholder.text = R.string.localization.addNote()
         textViewPlaceholder.textColor = .lightGray
         textViewPlaceholder.font = getPrimaryFont(.regular, size: 18)
         if (task.note != "") {

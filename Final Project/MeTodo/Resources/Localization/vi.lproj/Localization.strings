@@ -5,13 +5,30 @@
   Created by Hien Ho Developer on 4/5/20.
   Copyright © 2020 Hien Ho Developer. All rights reserved.
 */
-"SignIn" = "Đăng nhập";
-"LetSignIn" = "Đăng nhập nào!";
-"SignUp" = "Đăng kí";
-"LetSignUp" = "Đăng kí nào!";
 
-"Welcome" = "Xin chào";
-"Email" = "Email";
-"Password" = "Mật khẩu";
-"Done" = "Xong";
-"ChatRoom" = "Phòng chat";
+"GoodMorning" = "Chào buổi sáng.";
+"GoodAfternoon" = "Chào buổi trưa.";
+"GoodEvening" = "Chào buổi tối.";
+
+"TaskMessage" = "Bạn có %d %@ cần làm";
+"Task" = "công việc";
+"Tasks" = "công việc";
+
+"Completed" = "Đã hoàn thành";
+"Note" = "Ghi chú";
+"AddNote" = "Thêm ghi chú";
+
+"Icon" = "Icon";
+"Color" = "Màu";
+"Title" = "Chủ đề";
+
+"Save" = "Lưu";
+"AskTodo" = "Bạn cần làm gì?";
+"NewTask" = "Tạo công việc";
+
+"Date" = "Ngày thực hiện";
+"Done" = "Chọn";
+"Level" = "Mức độ";
+"Low" = "Thấp";
+"Medium" = "Bình thường";
+"Hight" = "Cao";

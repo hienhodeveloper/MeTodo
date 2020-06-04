@@ -14,7 +14,7 @@ protocol AddTaskViewDelegate: class {
 }
 
 class AddTaskView: UIView {
-
+    
     var primaryColor: UIColor!
     private var kBuffer: CGFloat!
     weak var delegate: AddTaskViewDelegate?
@@ -22,7 +22,13 @@ class AddTaskView: UIView {
     lazy var closeImageView = UIImageView()
     lazy var textLabel = UILabel()
     lazy var titleLabel = UILabel()
+    lazy var dateLabel = UILabel()
+    lazy var dateTextField = AppTextField()
+    lazy var levelLabel = UILabel()
+    lazy var levelTextField = AppTextField()
     
+    lazy var datePicker = UIDatePicker()
+    lazy var levelPicker = UIPickerView()
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -33,6 +39,8 @@ class AddTaskView: UIView {
         kBuffer = 15 + (UIScreen.main.bounds.width - MINIMIZED_LIST_WIDTH)/2
         buildUI()
         setConstraints()
+        showDatePicker()
+        showLevelPicker()
         alpha = 0
     }
     
@@ -54,7 +62,7 @@ class AddTaskView: UIView {
     }
     
     private func buildUI() {
-        titleLabel.text = "New Task"
+        titleLabel.text = R.string.localization.newTask()
         titleLabel.font = getPrimaryFont(.medium, size: 16)
         titleLabel.textAlignment = .center
         
@@ -64,19 +72,35 @@ class AddTaskView: UIView {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         closeImageView.addGestureRecognizer(tapGesture)
         
-        textLabel.text = "What do you need to do?"
+        textLabel.text = R.string.localization.askTodo()
         textLabel.font = getPrimaryFont(.medium, size: 15)
         textLabel.textColor = .lightGray
+        
+        dateLabel.text = R.string.localization.date()
+        dateLabel.font = getPrimaryFont(.medium, size: 15)
+        dateLabel.textColor = .lightGray
         
         textView.font = getPrimaryFont(.medium, size: 22)
         textView.tintColor = primaryColor
         
-        addSubviews([textView, closeImageView, textLabel, titleLabel])
+        dateTextField.font = getPrimaryFont(.medium, size: 22)
+        dateTextField.tintColor = primaryColor
+        dateTextField.isDisableAllAction = true
+        
+        levelLabel.text = R.string.localization.level()
+        levelLabel.font = getPrimaryFont(.medium, size: 15)
+        levelLabel.textColor = .lightGray
+        
+        levelTextField.font = getPrimaryFont(.medium, size: 22)
+        levelTextField.tintColor = primaryColor
+        levelTextField.isDisableAllAction = true
+
+        addSubviews([textView, closeImageView, textLabel, titleLabel, dateLabel, dateTextField, levelLabel, levelTextField])
     }
     
     private func setConstraints() {
         closeImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(16)
+            make.top.equalTo(SAFE_BUFFER)
             make.left.equalTo(16)
             make.height.width.equalTo(20)
         }
@@ -84,7 +108,6 @@ class AddTaskView: UIView {
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(closeImageView)
             make.height.equalTo(20)
-            make.width.equalTo(100)
             make.centerX.equalTo(self)
         }
         
@@ -97,9 +120,33 @@ class AddTaskView: UIView {
             make.top.equalTo(textLabel.snp.bottom).offset(10)
             make.left.equalTo(textLabel).offset(-6)
             make.width.equalTo(MINIMIZED_LIST_WIDTH)
+            make.height.equalTo(60)
         }
+        
+        dateLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(kBuffer)
+            make.top.equalTo(textView.snp.bottom).offset(16)
+        }
+        
+        dateTextField.snp.makeConstraints { (make) in
+            make.top.equalTo(dateLabel.snp.bottom).offset(10)
+            make.left.equalTo(dateLabel).offset(-6)
+            make.width.equalTo(MINIMIZED_LIST_WIDTH)
+        }
+        
+        levelLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(kBuffer)
+            make.top.equalTo(dateTextField.snp.bottom).offset(16)
+        }
+        
+        levelTextField.snp.makeConstraints { (make) in
+            make.top.equalTo(levelLabel.snp.bottom).offset(10)
+            make.left.equalTo(levelLabel).offset(-6)
+            make.width.equalTo(MINIMIZED_LIST_WIDTH)
+        }
+        
     }
-
+    
     // Mark: Keyboard
     
     private func applyDismissKeyboardGesture() {
@@ -130,6 +177,58 @@ class AddTaskView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func showDatePicker(){
+        //Formate Date
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.minimumDate = Date()
+        
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        
+        //done button & cancel button
+        let doneButton = UIBarButtonItem(title: R.string.localization.done(), style: .done, target: self, action: #selector(donedatePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        toolbar.setItems([doneButton,spaceButton], animated: false)
+        
+        // add toolbar to textField
+        dateTextField.inputAccessoryView = toolbar
+        // add datepicker to textField
+        dateTextField.inputView = datePicker
+        
+    }
+    
+    @objc func donedatePicker(){
+        //For date formate
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        dateTextField.text = formatter.string(from: datePicker.date)
+    }
+    
+    func showLevelPicker(){
+        //Formate Date
+        levelPicker.dataSource = self
+        levelPicker.delegate = self
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        
+        //done button & cancel button
+        let doneButton = UIBarButtonItem(title: R.string.localization.done(), style: .done, target: self, action: #selector(doneLevelPicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        toolbar.setItems([doneButton,spaceButton], animated: false)
+        
+        // add toolbar to textField
+        levelTextField.inputAccessoryView = toolbar
+        // add datepicker to textField
+        levelTextField.inputView = levelPicker
+        
+    }
+    
+    @objc func doneLevelPicker(){
+        let selectedIndex = levelPicker.selectedRow(inComponent: 0)
+        levelTextField.text = TaskLevel.allCases[selectedIndex].text
+    }
 }
 
 extension AddTaskView: UIGestureRecognizerDelegate {
@@ -137,5 +236,24 @@ extension AddTaskView: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
+    
+}
+
+extension AddTaskView: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        3
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return TaskLevel.allCases[row].text
+    }
+    
+}
+
+extension AddTaskView: UIPickerViewDelegate {
     
 }

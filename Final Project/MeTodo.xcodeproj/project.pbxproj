@@ -28,9 +28,6 @@
 		1E4745B124422D0D002B1F27 /* AppLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47458024422D0D002B1F27 /* AppLabel.swift */; };
 		1E4745B224422D0D002B1F27 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47458124422D0D002B1F27 /* AppButton.swift */; };
 		1E4745B424422D0D002B1F27 /* AppStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47458324422D0D002B1F27 /* AppStackView.swift */; };
-		1E4745B624422D0D002B1F27 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47458724422D0D002B1F27 /* OnboardViewController.swift */; };
-		1E4745B724422D0D002B1F27 /* OnboardRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47458824422D0D002B1F27 /* OnboardRoutes.swift */; };
-		1E4745B824422D0D002B1F27 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47458924422D0D002B1F27 /* SignInViewController.swift */; };
 		1E4745B924422D0D002B1F27 /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47458B24422D0D002B1F27 /* AnalyticsEvent.swift */; };
 		1E4745BA24422D0D002B1F27 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47458C24422D0D002B1F27 /* AnalyticsService.swift */; };
 		1E4745BB24422D0D002B1F27 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47458D24422D0D002B1F27 /* AnalyticsManager.swift */; };
@@ -46,11 +43,9 @@
 		1E4745C524422D0E002B1F27 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47459924422D0D002B1F27 /* StringExtension.swift */; };
 		1E4745C924422DDE002B1F27 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4745C824422DDE002B1F27 /* R.generated.swift */; };
 		1E4745CB24422EA4002B1F27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E4745CA24422EA4002B1F27 /* GoogleService-Info.plist */; };
-		1E4745CD24423A97002B1F27 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4745CC24423A97002B1F27 /* SignUpViewController.swift */; };
 		1E4745CF24423CD2002B1F27 /* AppViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4745CE24423CD2002B1F27 /* AppViewControllerProtocol.swift */; };
 		1E4745D124423E16002B1F27 /* LiquidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4745D024423E16002B1F27 /* LiquidViewController.swift */; };
 		1E4745D424423F9D002B1F27 /* LiquidViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4745D324423F9D002B1F27 /* LiquidViewControllerProtocol.swift */; };
-		1E4745D62442411C002B1F27 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4745D52442411C002B1F27 /* StartViewController.swift */; };
 		1E535892244DFE5F008E0A7B /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E535891244DFE5F008E0A7B /* BaseModel.swift */; };
 		1E572705244B4D8E00C1A001 /* TimeFormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E572704244B4D8E00C1A001 /* TimeFormatHelper.swift */; };
 		1E671F002449D2A500C2F347 /* GenericCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E671EFF2449D2A500C2F347 /* GenericCollectionViewCell.swift */; };
@@ -79,7 +74,7 @@
 		520C702D2484ADEB00E70888 /* UIView+Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C702A2484ADEB00E70888 /* UIView+Todo.swift */; };
 		520C70302484AE1700E70888 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C702E2484AE1700E70888 /* Constants.swift */; };
 		520C70312484AE1700E70888 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C702F2484AE1700E70888 /* Helpers.swift */; };
-		5239CFFF2480B5D3005B4466 /* MeTodo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5239CFFD2480B5D3005B4466 /* MeTodo.xcdatamodeld */; };
+		5210B9392487C3900031C658 /* MeNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5210B9382487C3900031C658 /* MeNotificationManager.swift */; };
 		95CB05D8BDB014C5583CAF93 /* Pods_MeTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5F4EE32348DFBAAC2D3F92 /* Pods_MeTodo.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,9 +103,6 @@
 		1E47458024422D0D002B1F27 /* AppLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLabel.swift; sourceTree = "<group>"; };
 		1E47458124422D0D002B1F27 /* AppButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		1E47458324422D0D002B1F27 /* AppStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStackView.swift; sourceTree = "<group>"; };
-		1E47458724422D0D002B1F27 /* OnboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
-		1E47458824422D0D002B1F27 /* OnboardRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardRoutes.swift; sourceTree = "<group>"; };
-		1E47458924422D0D002B1F27 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1E47458B24422D0D002B1F27 /* AnalyticsEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
 		1E47458C24422D0D002B1F27 /* AnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		1E47458D24422D0D002B1F27 /* AnalyticsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
@@ -126,11 +118,9 @@
 		1E47459924422D0D002B1F27 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1E4745C824422DDE002B1F27 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		1E4745CA24422EA4002B1F27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		1E4745CC24423A97002B1F27 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1E4745CE24423CD2002B1F27 /* AppViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewControllerProtocol.swift; sourceTree = "<group>"; };
 		1E4745D024423E16002B1F27 /* LiquidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidViewController.swift; sourceTree = "<group>"; };
 		1E4745D324423F9D002B1F27 /* LiquidViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidViewControllerProtocol.swift; sourceTree = "<group>"; };
-		1E4745D52442411C002B1F27 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		1E535891244DFE5F008E0A7B /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		1E572704244B4D8E00C1A001 /* TimeFormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatHelper.swift; sourceTree = "<group>"; };
 		1E671EFF2449D2A500C2F347 /* GenericCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -159,7 +149,7 @@
 		520C702A2484ADEB00E70888 /* UIView+Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Todo.swift"; path = "../../../../Todo-List-App-Swift/Todo/Extensions/UIView+Todo.swift"; sourceTree = "<group>"; };
 		520C702E2484AE1700E70888 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		520C702F2484AE1700E70888 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		5239CFFE2480B5D3005B4466 /* MeTodo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeTodo.xcdatamodel; sourceTree = "<group>"; };
+		5210B9382487C3900031C658 /* MeNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeNotificationManager.swift; sourceTree = "<group>"; };
 		6D5F4EE32348DFBAAC2D3F92 /* Pods_MeTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		875C8F987D91A4C47E6AFD1A /* Pods-MeTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeTodo.debug.xcconfig"; path = "Target Support Files/Pods-MeTodo/Pods-MeTodo.debug.xcconfig"; sourceTree = "<group>"; };
 		C4765420E08E708B6B0D2CD1 /* Pods-MeTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeTodo.release.xcconfig"; path = "Target Support Files/Pods-MeTodo/Pods-MeTodo.release.xcconfig"; sourceTree = "<group>"; };
@@ -198,10 +188,8 @@
 		1E47452024422978002B1F27 /* MeTodo */ = {
 			isa = PBXGroup;
 			children = (
-				5239CFD92480B559005B4466 /* Core Data */,
 				1E4745C824422DDE002B1F27 /* R.generated.swift */,
 				1E47458A24422D0D002B1F27 /* Analytics */,
-				1E47459A24422D0D002B1F27 /* DataSource */,
 				1E47459124422D0D002B1F27 /* Extensions */,
 				1E47458E24422D0D002B1F27 /* Helpers */,
 				1E47457124422D0D002B1F27 /* Managers */,
@@ -212,6 +200,7 @@
 				1E47456224422D0D002B1F27 /* ViewModels */,
 				1E47452124422978002B1F27 /* AppDelegate.swift */,
 				1E47452324422978002B1F27 /* SceneDelegate.swift */,
+				520C70262484ADA100E70888 /* Main.storyboard */,
 				1E4745CA24422EA4002B1F27 /* GoogleService-Info.plist */,
 				1E47452A2442297B002B1F27 /* Assets.xcassets */,
 				1E47452C2442297B002B1F27 /* LaunchScreen.storyboard */,
@@ -279,6 +268,7 @@
 			children = (
 				1E47457224422D0D002B1F27 /* FirebaseService.swift */,
 				1E47457324422D0D002B1F27 /* FirebaseManager.swift */,
+				5210B9382487C3900031C658 /* MeNotificationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -286,7 +276,6 @@
 		1E47457424422D0D002B1F27 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1E47458624422D0D002B1F27 /* Onboarding */,
 				1E47457524422D0D002B1F27 /* Home Tabbar */,
 				1E47458424422D0D002B1F27 /* CustomView */,
 				1E47457A24422D0D002B1F27 /* BaseView */,
@@ -297,7 +286,6 @@
 		1E47457524422D0D002B1F27 /* Home Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				520C70262484ADA100E70888 /* Main.storyboard */,
 				520C70182484AD8C00E70888 /* AddTaskView.swift */,
 				520C701B2484AD8D00E70888 /* CustomListViewController.swift */,
 				520C701E2484AD8D00E70888 /* HomeViewController.swift */,
@@ -337,18 +325,6 @@
 				1E00EF6924473A190049D0F7 /* FloatingTextField.swift */,
 			);
 			path = CustomView;
-			sourceTree = "<group>";
-		};
-		1E47458624422D0D002B1F27 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				1E47458824422D0D002B1F27 /* OnboardRoutes.swift */,
-				1E47458724422D0D002B1F27 /* OnboardViewController.swift */,
-				1E4745D52442411C002B1F27 /* StartViewController.swift */,
-				1E47458924422D0D002B1F27 /* SignInViewController.swift */,
-				1E4745CC24423A97002B1F27 /* SignUpViewController.swift */,
-			);
-			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		1E47458A24422D0D002B1F27 /* Analytics */ = {
@@ -395,13 +371,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		1E47459A24422D0D002B1F27 /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataSource;
-			sourceTree = "<group>";
-		};
 		1E4745D224423E20002B1F27 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,14 +395,6 @@
 			children = (
 			);
 			path = "Collection View";
-			sourceTree = "<group>";
-		};
-		5239CFD92480B559005B4466 /* Core Data */ = {
-			isa = PBXGroup;
-			children = (
-				5239CFFD2480B5D3005B4466 /* MeTodo.xcdatamodeld */,
-			);
-			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		D42B95C3B85B254AB7DCF5D8 /* Frameworks */ = {
@@ -598,7 +559,6 @@
 				1EB5B7912443461B0028677E /* AppError.swift in Sources */,
 				1E4745CF24423CD2002B1F27 /* AppViewControllerProtocol.swift in Sources */,
 				1EB5B78D24431DD30028677E /* SignUpViewModel.swift in Sources */,
-				1E4745CD24423A97002B1F27 /* SignUpViewController.swift in Sources */,
 				1E4745AE24422D0D002B1F27 /* AppViewController.swift in Sources */,
 				1E4745B424422D0D002B1F27 /* AppStackView.swift in Sources */,
 				1E4745D124423E16002B1F27 /* LiquidViewController.swift in Sources */,
@@ -606,7 +566,6 @@
 				520C702C2484ADEB00E70888 /* UIColor+Todo.swift in Sources */,
 				1EC8396C2442D8B600E7F0BF /* OnboardHeaderView.swift in Sources */,
 				1E4745C324422D0E002B1F27 /* UITextField.swift in Sources */,
-				1E4745B724422D0D002B1F27 /* OnboardRoutes.swift in Sources */,
 				1E4745A624422D0D002B1F27 /* FirebaseService.swift in Sources */,
 				1E4745B224422D0D002B1F27 /* AppButton.swift in Sources */,
 				1E4745BF24422D0E002B1F27 /* UIView.swift in Sources */,
@@ -620,7 +579,6 @@
 				1E4745A124422D0D002B1F27 /* SignInViewModel.swift in Sources */,
 				520C702D2484ADEB00E70888 /* UIView+Todo.swift in Sources */,
 				1EB5B7932443528B0028677E /* AppNotification.swift in Sources */,
-				1E4745B624422D0D002B1F27 /* OnboardViewController.swift in Sources */,
 				1E4745A424422D0D002B1F27 /* AppDimension.swift in Sources */,
 				1E4745B124422D0D002B1F27 /* AppLabel.swift in Sources */,
 				1E671F002449D2A500C2F347 /* GenericCollectionViewCell.swift in Sources */,
@@ -629,7 +587,6 @@
 				1E4745BC24422D0D002B1F27 /* UIHelper.swift in Sources */,
 				1E4745BA24422D0D002B1F27 /* AnalyticsService.swift in Sources */,
 				520C70252484AD8D00E70888 /* HomeViewController.swift in Sources */,
-				5239CFFF2480B5D3005B4466 /* MeTodo.xcdatamodeld in Sources */,
 				1EE98DF92444A3D90090764B /* UICollectionView.swift in Sources */,
 				520C70312484AE1700E70888 /* Helpers.swift in Sources */,
 				520C702B2484ADEB00E70888 /* UIDevice+Todo.swift in Sources */,
@@ -642,6 +599,7 @@
 				1E4745C524422D0E002B1F27 /* StringExtension.swift in Sources */,
 				1E4745A724422D0D002B1F27 /* FirebaseManager.swift in Sources */,
 				1E4745B924422D0D002B1F27 /* AnalyticsEvent.swift in Sources */,
+				5210B9392487C3900031C658 /* MeNotificationManager.swift in Sources */,
 				520C70172484ABA000E70888 /* Task.swift in Sources */,
 				1E4745C924422DDE002B1F27 /* R.generated.swift in Sources */,
 				520C701F2484AD8D00E70888 /* AddTaskView.swift in Sources */,
@@ -649,11 +607,9 @@
 				1E4745AC24422D0D002B1F27 /* AppImageView.swift in Sources */,
 				1E4745AD24422D0D002B1F27 /* AppView.swift in Sources */,
 				1E47452224422978002B1F27 /* AppDelegate.swift in Sources */,
-				1E4745B824422D0D002B1F27 /* SignInViewController.swift in Sources */,
 				1E4745AA24422D0D002B1F27 /* HomeRoutes.swift in Sources */,
 				1EB5B78B244312940028677E /* UIViewController.swift in Sources */,
 				1EE98DF22444962C0090764B /* HeaderView.swift in Sources */,
-				1E4745D62442411C002B1F27 /* StartViewController.swift in Sources */,
 				1E4745C124422D0E002B1F27 /* NSObject.swift in Sources */,
 				1E47452424422978002B1F27 /* SceneDelegate.swift in Sources */,
 				1EB5B79F2443859F0028677E /* TicketCalendarView.swift in Sources */,
@@ -861,19 +817,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		5239CFFD2480B5D3005B4466 /* MeTodo.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				5239CFFE2480B5D3005B4466 /* MeTodo.xcdatamodel */,
-			);
-			currentVersion = 5239CFFE2480B5D3005B4466 /* MeTodo.xcdatamodel */;
-			path = MeTodo.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 1E47451624422978002B1F27 /* Project object */;
 }

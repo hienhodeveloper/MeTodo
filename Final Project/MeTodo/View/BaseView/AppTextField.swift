@@ -37,7 +37,7 @@ class AppTextField: UITextField {
         }
     }
     
-    var isDisablePaste = false
+    var isDisableAllAction = false
 
     override func draw(_ rect: CGRect) {
 
@@ -56,12 +56,6 @@ class AppTextField: UITextField {
     }
     
     override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-        if isDisablePaste == false {
-            return super.canPerformAction(action, withSender: sender)
-        }
-        if action == #selector(UIResponderStandardEditActions.paste(_:)) {
-            return false
-        }
-        return super.canPerformAction(action, withSender: sender)
+        return !isDisableAllAction
     }
 }
