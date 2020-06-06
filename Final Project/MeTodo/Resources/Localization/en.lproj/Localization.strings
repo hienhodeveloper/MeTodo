@@ -34,3 +34,6 @@
 "Low" = "Low";
 "Medium" = "Medium";
 "Hight" = "Hight";
+
+"SomethingWrong" = "Something went wrong";
+"SomethingWrongMessage" = "I cannot remind you. Please turn on notification 😭";

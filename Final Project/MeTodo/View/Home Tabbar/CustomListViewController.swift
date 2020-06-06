@@ -172,11 +172,14 @@ class CustomListViewController: UIViewController {
     @objc func deleteList() {
         let alert = UIAlertController(title: "Are you sure?", message: "This list and all it's associated data will be deleted. This cannot be undone", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+            self.taskList.activeTasks.forEach {
+                MeNotificationManager.shared.cancelNotifications(ids: [$0.id])
+            }
+            
             let realm = try! Realm()
             try! realm.write {
                 realm.delete(self.taskList)
             }
-            
             self.feedbackGenerator.notificationOccurred(.success)
             self.closeView()
         }))

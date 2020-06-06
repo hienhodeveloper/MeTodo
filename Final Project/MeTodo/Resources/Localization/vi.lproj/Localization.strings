@@ -32,3 +32,6 @@
 "Low" = "Thấp";
 "Medium" = "Bình thường";
 "Hight" = "Cao";
+
+"SomethingWrong" = "Có lỗi xảy ra";
+"SomethingWrongMessage" = "Tôi không thể nhắc bạn. Vui lòng bật thông báo trong Cài đặt";

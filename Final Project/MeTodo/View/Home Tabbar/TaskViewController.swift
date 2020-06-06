@@ -171,11 +171,12 @@ class TaskViewController: UIViewController {
     }
     
     private func deleteTask() {
+        let id = task.id
         let realm = try! Realm()
         try! realm.write {
             realm.delete(task)
         }
-        
+        MeNotificationManager.shared.cancelNotifications(ids: [id])
         closeView(deletedTask: true)
     }
     

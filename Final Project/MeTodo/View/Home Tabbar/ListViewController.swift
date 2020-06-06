@@ -644,17 +644,24 @@ extension ListViewController: TaskTableViewCellDelegate {
     func changeTaskState(for cell: TaskTableViewCell) {
         let realm = try! Realm()
         guard let indexPath = tableView.indexPath(for: cell) else { return }
+       
         try! realm.write {
             if (indexPath.section == 0) {
                 let task = taskList.activeTasks[indexPath.row]
+                let id = task.id
                 taskList.activeTasks.remove(at: indexPath.row)
                 taskList.completedTasks.insert(task, at: 0)
                 delegate?.updateTodoTotal(incrementBy: -1)
+                MeNotificationManager.shared.cancelNotifications(ids: [id])
             } else {
                 let task = taskList.completedTasks[indexPath.row]
+                let id = task.id
+                let content = "\(task.text) - \(R.string.localization.level()): \(TaskLevel(rawValue: task.level)!.text) "
+                let date = task.dueDate
                 taskList.completedTasks.remove(at: indexPath.row)
                 taskList.activeTasks.insert(task, at: 0)
                 delegate?.updateTodoTotal(incrementBy: 1)
+                MeNotificationManager.shared.schedule(id: id, contentTitle: content, date: date)
             }
         }
 

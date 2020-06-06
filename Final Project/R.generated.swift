@@ -455,7 +455,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 21 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 23 localization keys.
     struct localization {
       /// en translation: Add a note
       ///
@@ -489,6 +489,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let hight = Rswift.StringResource(key: "Hight", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: I cannot remind you. Please turn on notification 😭
+      ///
+      /// Locales: en, vi
+      static let somethingWrongMessage = Rswift.StringResource(key: "SomethingWrongMessage", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Icon
       ///
       /// Locales: en, vi
@@ -517,6 +521,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let save = Rswift.StringResource(key: "Save", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Something went wrong
+      ///
+      /// Locales: en, vi
+      static let somethingWrong = Rswift.StringResource(key: "SomethingWrong", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Title
       ///
       /// Locales: en, vi
@@ -662,6 +670,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Hight", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: I cannot remind you. Please turn on notification 😭
+      ///
+      /// Locales: en, vi
+      static func somethingWrongMessage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("SomethingWrongMessage", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "SomethingWrongMessage"
+        }
+
+        return NSLocalizedString("SomethingWrongMessage", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Icon
       ///
       /// Locales: en, vi
@@ -765,6 +788,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Save", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Something went wrong
+      ///
+      /// Locales: en, vi
+      static func somethingWrong(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("SomethingWrong", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "SomethingWrong"
+        }
+
+        return NSLocalizedString("SomethingWrong", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Title

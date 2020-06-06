@@ -11,16 +11,17 @@ import RealmSwift
 
 class MeNotificationManager {
     static let shared = MeNotificationManager()
-        
+    
     func requestPermission() -> Void {
         UNUserNotificationCenter
             .current()
-            .requestAuthorization(options: [.alert, .badge, .alert]) { granted, error in
+            .requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
                 if granted == true && error == nil {}
         }
     }
     
     func schedule(id: String, contentTitle: String, date: Date)-> Void {
+        guard date > Date() else { return }
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             switch settings.authorizationStatus {
             case .notDetermined:
@@ -34,20 +35,19 @@ class MeNotificationManager {
     }
     
     func scheduleNotification(id: String, contentTitle: String, date: Date) -> Void {
-            cancelNotifications(ids: [id])
-            let content = UNMutableNotificationContent()
-            content.title = contentTitle
-            var mili = (date.timeIntervalSince1970 - Date().timeIntervalSince1970) / 1000
-            if mili <= 0 {
-                mili = 2
+        cancelNotifications(ids: [id])
+        let content = UNMutableNotificationContent()
+        content.title = contentTitle
+        content.sound = UNNotificationSound.default
+        let triggerDaily = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: {(error) in
+            if let _ = error {
+                AppNavigator.shared.currentViewController?.showMessage(title: R.string.localization.somethingWrong(), message:  R.string.localization.somethingWrongMessage())
             }
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: mili, repeats: false)
-            let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
-            
-            UNUserNotificationCenter.current().add(request) { error in
-                guard error == nil else { return }
-                print("Scheduling notification with id: \(id)")
-            }
+        })
     }
     
     func cancelNotifications(ids: [String]) {

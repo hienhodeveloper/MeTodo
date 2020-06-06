@@ -346,7 +346,7 @@ extension HomeViewController: ListViewDelegate {
     
     func updateTodoTotal(incrementBy: Int) {
         taskCount += incrementBy
-        subtitleLabel.text = "You have " + String(taskCount) + (taskCount == 1 ? " task " : " tasks ") + "to do."
+        subtitleLabel.text = R.string.localization.taskMessage(taskCount, (taskCount == 1 ? R.string.localization.task() : R.string.localization.tasks()))
     }
     
 }
@@ -371,7 +371,7 @@ extension HomeViewController: CustomListViewDelegate {
         let realm = try! Realm()
         animateGradientChange(with: realm.objects(TaskList.self))
         taskCount = realm.objects(TaskList.self).flatMap({$0.activeTasks}).count
-        subtitleLabel.text = "You have " + String(taskCount) + (taskCount == 1 ? " task " : " tasks ") + "to do."
+        subtitleLabel.text = R.string.localization.taskMessage(taskCount, (taskCount == 1 ? R.string.localization.task() : R.string.localization.tasks()))
         
         UIApplication.shared.statusBarStyle = .lightContent
     }
