@@ -375,15 +375,17 @@ class ListViewController: UIViewController {
     
     private func commitTask() {
         let realm = try! Realm()
-        guard let text = addTaskView.textView.text else { return }
-        guard let _ = addTaskView.dateTextField.text else { return }
-        guard let _ = addTaskView.levelTextField.text else { return }
+        guard let text = addTaskView.textView.text, text.count > 0 else { return }
+        guard let _date = addTaskView.dateTextField.text, _date.count > 0 else { return }
+        guard let _level = addTaskView.levelTextField.text, _level.count > 0 else { return }
         let level = addTaskView.levelPicker.selectedRow(inComponent: 0)
         let levelTask = TaskLevel.allCases[level].rawValue
         let date = addTaskView.datePicker.date
         guard text != "" else { return }
         
         let task = Task()
+        let id = UUID().uuidString
+        task.id = id
         task.text = text
         task.level = levelTask
         task.dueDate = date
@@ -395,12 +397,19 @@ class ListViewController: UIViewController {
         tableView.reloadSections([0], with: .automatic)
         addTaskView.dismissKeyboard()
         closeAddTaskView()
-        addTaskView.textView.text = ""
+        resetValue()
         delegate?.updateTodoTotal(incrementBy: 1)
         setTodosLabel()
         
-        MeNotificationManager.shared.addNotification(title: "\(text) - \(R.string.localization.level()): \(TaskLevel.allCases[level].text)", date: date)
-        MeNotificationManager.shared.scheduleNotifications()
+        let contentTitle = "\(text) - \(R.string.localization.level()): \(TaskLevel.allCases[level].text) "
+        MeNotificationManager.shared.schedule(id: id, contentTitle: contentTitle, date: date )
+
+    }
+    
+    private func resetValue() {
+        addTaskView.textView.text = ""
+        addTaskView.dateTextField.text = ""
+        addTaskView.levelTextField.text = ""
     }
     
     @objc func minimizeFromBackButton() {

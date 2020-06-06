@@ -7,59 +7,47 @@
 //
 
 import UserNotifications
-
-struct MeNotification {
-    var id: String
-    var title: String
-    var date: Date
-}
+import RealmSwift
 
 class MeNotificationManager {
     static let shared = MeNotificationManager()
-    
-    var notifications = [MeNotification]()
-    
+        
     func requestPermission() -> Void {
         UNUserNotificationCenter
             .current()
             .requestAuthorization(options: [.alert, .badge, .alert]) { granted, error in
-                if granted == true && error == nil {
-                    self.scheduleNotifications()
-                    // We have permission!
-                }
+                if granted == true && error == nil {}
         }
     }
     
-    func addNotification(title: String, date: Date) -> Void {
-        notifications.append(MeNotification(id: UUID().uuidString, title: title, date: date))
-    }
-    
-    func schedule() -> Void {
+    func schedule(id: String, contentTitle: String, date: Date)-> Void {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             switch settings.authorizationStatus {
             case .notDetermined:
                 self.requestPermission()
             case .authorized, .provisional:
-                self.scheduleNotifications()
+                self.scheduleNotification(id: id, contentTitle: contentTitle, date: date)
             default:
                 break
             }
         }
     }
     
-    func scheduleNotifications() -> Void {
-        for notification in notifications {
+    func scheduleNotification(id: String, contentTitle: String, date: Date) -> Void {
+            cancelNotifications(ids: [id])
             let content = UNMutableNotificationContent()
-            content.title = notification.title
-            let mili = notification.date.timeIntervalSince1970 - Date().timeIntervalSince1970
+            content.title = contentTitle
+            var mili = (date.timeIntervalSince1970 - Date().timeIntervalSince1970) / 1000
+            if mili <= 0 {
+                mili = 2
+            }
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: mili, repeats: false)
-            let request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)
+            let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
             
             UNUserNotificationCenter.current().add(request) { error in
                 guard error == nil else { return }
-                print("Scheduling notification with id: \(notification.id)")
+                print("Scheduling notification with id: \(id)")
             }
-        }
     }
     
     func cancelNotifications(ids: [String]) {
