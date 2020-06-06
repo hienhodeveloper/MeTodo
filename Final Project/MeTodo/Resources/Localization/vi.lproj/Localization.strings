@@ -35,3 +35,8 @@
 
 "SomethingWrong" = "Có lỗi xảy ra";
 "SomethingWrongMessage" = "Tôi không thể nhắc bạn. Vui lòng bật thông báo trong Cài đặt";
+
+"DeleteTitle" = "Bạn chắc không?";
+"DeleteMessage" = "Danh sách này và tất cả dữ liệu liên quan sẽ bị xóa. Điều này không thể được hoàn tác";
+"Delete" = "Xoá";
+"Cancel" = "Huỷ";

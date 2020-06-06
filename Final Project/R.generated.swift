@@ -455,12 +455,20 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localization` struct is generated, and contains static references to 23 localization keys.
+    /// This `R.string.localization` struct is generated, and contains static references to 27 localization keys.
     struct localization {
       /// en translation: Add a note
       ///
       /// Locales: en, vi
       static let addNote = Rswift.StringResource(key: "AddNote", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Are you sure?
+      ///
+      /// Locales: en, vi
+      static let deleteTitle = Rswift.StringResource(key: "DeleteTitle", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Cancel
+      ///
+      /// Locales: en, vi
+      static let cancel = Rswift.StringResource(key: "Cancel", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Color
       ///
       /// Locales: en, vi
@@ -469,6 +477,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let date = Rswift.StringResource(key: "Date", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Delete
+      ///
+      /// Locales: en, vi
+      static let delete = Rswift.StringResource(key: "Delete", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Done
       ///
       /// Locales: en, vi
@@ -525,6 +537,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let somethingWrong = Rswift.StringResource(key: "SomethingWrong", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: This list and all it's associated data will be deleted. This cannot be undone
+      ///
+      /// Locales: en, vi
+      static let deleteMessage = Rswift.StringResource(key: "DeleteMessage", tableName: "Localization", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Title
       ///
       /// Locales: en, vi
@@ -565,6 +581,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("AddNote", tableName: "Localization", bundle: bundle, comment: "")
       }
 
+      /// en translation: Are you sure?
+      ///
+      /// Locales: en, vi
+      static func deleteTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("DeleteTitle", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "DeleteTitle"
+        }
+
+        return NSLocalizedString("DeleteTitle", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cancel
+      ///
+      /// Locales: en, vi
+      static func cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Cancel", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "Cancel"
+        }
+
+        return NSLocalizedString("Cancel", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
       /// en translation: Color
       ///
       /// Locales: en, vi
@@ -593,6 +639,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Date", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Delete
+      ///
+      /// Locales: en, vi
+      static func delete(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Delete", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "Delete"
+        }
+
+        return NSLocalizedString("Delete", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Done
@@ -803,6 +864,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("SomethingWrong", tableName: "Localization", bundle: bundle, comment: "")
+      }
+
+      /// en translation: This list and all it's associated data will be deleted. This cannot be undone
+      ///
+      /// Locales: en, vi
+      static func deleteMessage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("DeleteMessage", tableName: "Localization", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localization", preferredLanguages: preferredLanguages) else {
+          return "DeleteMessage"
+        }
+
+        return NSLocalizedString("DeleteMessage", tableName: "Localization", bundle: bundle, comment: "")
       }
 
       /// en translation: Title

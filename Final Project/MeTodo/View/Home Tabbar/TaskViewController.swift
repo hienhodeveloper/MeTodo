@@ -80,9 +80,9 @@ class TaskViewController: UIViewController {
         let deleteTap = UITapGestureRecognizer(target: self, action: #selector(deleteTaskPrompt))
         trashImageView.addGestureRecognizer(deleteTap)
         
-        var statusText = "TODO"
+        var statusText = "Todo"
         if (completed) {
-            statusText = R.string.localization.completed().uppercased()
+            statusText = R.string.localization.completed()
         }
         
         statusLabel.text = statusText
@@ -268,6 +268,7 @@ class TaskViewController: UIViewController {
             let level = levelPicker.selectedRow(inComponent: 0)
             let levelTask = TaskLevel.allCases[level].rawValue
             let date = datePicker.date
+            let oldDate = task.dueDate
             guard text != "" else { return }
             
             try! realm.write {
@@ -276,6 +277,7 @@ class TaskViewController: UIViewController {
                 task.dueDate = date
             }
             
+            if date == oldDate { return }
             let contentTitle = "\(text) - \(R.string.localization.level()): \(TaskLevel.allCases[level].text) "
             MeNotificationManager.shared.schedule(id: id, contentTitle: contentTitle, date: date )
         }
@@ -295,12 +297,12 @@ class TaskViewController: UIViewController {
     }
     
     @objc func deleteTaskPrompt() {
-        let alert = UIAlertController(title: "Are you sure?", message: "This task and all it's associated data will be deleted. This cannot be undone", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+        let alert = UIAlertController(title: R.string.localization.deleteTitle(), message: R.string.localization.deleteMessage(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: R.string.localization.delete(), style: .destructive, handler: { _ in
             self.deleteTask()
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: R.string.localization.cancel(), style: .default, handler: nil))
         
         present(alert, animated: true, completion: nil)        
     }

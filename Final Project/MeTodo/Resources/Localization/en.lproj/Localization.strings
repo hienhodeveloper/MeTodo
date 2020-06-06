@@ -37,3 +37,8 @@
 
 "SomethingWrong" = "Something went wrong";
 "SomethingWrongMessage" = "I cannot remind you. Please turn on notification 😭";
+
+"DeleteTitle" = "Are you sure?";
+"DeleteMessage" = "This list and all it's associated data will be deleted. This cannot be undone";
+"Delete" = "Delete";
+"Cancel" = "Cancel";

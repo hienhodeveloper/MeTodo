@@ -170,12 +170,11 @@ class CustomListViewController: UIViewController {
     }
     
     @objc func deleteList() {
-        let alert = UIAlertController(title: "Are you sure?", message: "This list and all it's associated data will be deleted. This cannot be undone", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+        let alert = UIAlertController(title: R.string.localization.deleteTitle(), message: R.string.localization.deleteMessage(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: R.string.localization.delete(), style: .destructive, handler: { _ in
             self.taskList.activeTasks.forEach {
                 MeNotificationManager.shared.cancelNotifications(ids: [$0.id])
             }
-            
             let realm = try! Realm()
             try! realm.write {
                 realm.delete(self.taskList)
@@ -184,7 +183,7 @@ class CustomListViewController: UIViewController {
             self.closeView()
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: R.string.localization.cancel(), style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
 
     }
