@@ -75,13 +75,13 @@ class AddTaskView: UIView {
         textLabel.text = R.string.localization.askTodo()
         textLabel.font = getPrimaryFont(.medium, size: 15)
         textLabel.textColor = .lightGray
+
+        textView.font = getPrimaryFont(.medium, size: 22)
+        textView.tintColor = primaryColor
         
         dateLabel.text = R.string.localization.date()
         dateLabel.font = getPrimaryFont(.medium, size: 15)
         dateLabel.textColor = .lightGray
-        
-        textView.font = getPrimaryFont(.medium, size: 22)
-        textView.tintColor = primaryColor
         
         dateTextField.font = getPrimaryFont(.medium, size: 22)
         dateTextField.tintColor = primaryColor

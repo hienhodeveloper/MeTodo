@@ -27,22 +27,40 @@ class TaskViewController: UIViewController {
     lazy var closeImageView = UIImageView()
     lazy var trashImageView = UIImageView()
     lazy var taskTextView = UITextView()
-    lazy var noteTextView = UITextView()
     lazy var statusLabel = UILabel()
-    lazy var noteLabel = UILabel()
-    lazy var divider = UIView()
     lazy var scrollView = UIScrollView()
     lazy var textViewPlaceholder = UILabel()
     weak var delegate: TaskViewControllerDelegate?
+    private var kBuffer: CGFloat!
+    lazy var dateLabel = UILabel()
+    lazy var dateTextField = AppTextField()
+    lazy var levelLabel = UILabel()
+    lazy var levelTextField = AppTextField()
+    
+    lazy var datePicker = UIDatePicker()
+    lazy var levelPicker = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        kBuffer = 15 + (UIScreen.main.bounds.width - MINIMIZED_LIST_WIDTH)/2
         applyDismissKeyboardGesture()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         buildUI()
+        datePicker.date = task.dueDate
+        showDatePicker()
+        showLevelPicker()
+        levelPicker.selectRow(TaskLevel.allCases.firstIndex(of: task.taskLevel)!, inComponent: 0, animated: true)
+        donedatePicker()
+        doneLevelPicker()
         setConstraints()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        closeView(deletedTask: false)
+    }
+    
     
     private func buildUI() {
         view.backgroundColor = .white
@@ -68,8 +86,8 @@ class TaskViewController: UIViewController {
         }
         
         statusLabel.text = statusText
+        statusLabel.font = getPrimaryFont(.medium, size: 15)
         statusLabel.textColor = .lightGray
-        statusLabel.font = getPrimaryFont(.medium, size: 12)
         
         taskTextView.text = task.text
         taskTextView.font = getPrimaryFont(.medium, size: 22)
@@ -80,31 +98,25 @@ class TaskViewController: UIViewController {
         taskTextView.showsVerticalScrollIndicator = false
         taskTextView.delegate = self
         
-        noteLabel.text = R.string.localization.note().uppercased()
-        noteLabel.textColor = .lightGray
-        noteLabel.font = getPrimaryFont(.medium, size: 12)
+        dateLabel.text = R.string.localization.date()
+        dateLabel.font = getPrimaryFont(.medium, size: 15)
+        dateLabel.textColor = .lightGray
         
-        noteTextView.text = task.note
-        noteTextView.font = getPrimaryFont(.regular, size: 18)
-        noteTextView.textColor = .black
-        noteTextView.translatesAutoresizingMaskIntoConstraints = true
-        noteTextView.isScrollEnabled = false
-        noteTextView.sizeToFit()
-        noteTextView.showsVerticalScrollIndicator = false
-        noteTextView.delegate = self
+        dateTextField.font = getPrimaryFont(.medium, size: 22)
+        dateTextField.tintColor = .black
+        dateTextField.isDisableAllAction = true
         
-        textViewPlaceholder.text = R.string.localization.addNote()
-        textViewPlaceholder.textColor = .lightGray
-        textViewPlaceholder.font = getPrimaryFont(.regular, size: 18)
-        if (task.note != "") {
-            textViewPlaceholder.alpha = 0
-        }
+        levelLabel.text = R.string.localization.level()
+        levelLabel.font = getPrimaryFont(.medium, size: 15)
+        levelLabel.textColor = .lightGray
         
-        divider.backgroundColor = .superLightGray
-    
+        levelTextField.font = getPrimaryFont(.medium, size: 22)
+        levelTextField.tintColor = .black
+        levelTextField.isDisableAllAction = true
+
         view.addSubview(scrollView)
         
-        scrollView.addSubviews([statusLabel, taskTextView, closeImageView, noteLabel, noteTextView, divider, textViewPlaceholder, trashImageView])
+        scrollView.addSubviews([statusLabel, taskTextView, closeImageView, trashImageView, dateLabel, dateTextField, levelLabel, levelTextField])
     }
 
     private func setConstraints() {
@@ -126,9 +138,7 @@ class TaskViewController: UIViewController {
         
         statusLabel.snp.makeConstraints { (make) in
             make.top.equalTo(closeImageView.snp.bottom).offset(30)
-            make.width.equalTo(MINIMIZED_LIST_WIDTH)
-            make.height.equalTo(10)
-            make.centerX.equalTo(self.view)
+            make.left.equalTo(kBuffer)
         }
         
         taskTextView.snp.makeConstraints { (make) in
@@ -137,30 +147,79 @@ class TaskViewController: UIViewController {
             make.width.equalTo(MINIMIZED_LIST_WIDTH)
         }
         
-        divider.snp.makeConstraints { (make) in
-            make.top.equalTo(taskTextView.snp.bottom).offset(10)
-            make.width.equalTo(self.view)
-            make.height.equalTo(30)
+        dateLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(kBuffer)
+            make.top.equalTo(taskTextView.snp.bottom).offset(16)
         }
         
-        noteLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(divider.snp.bottom).offset(20)
+        dateTextField.snp.makeConstraints { (make) in
+            make.top.equalTo(dateLabel.snp.bottom).offset(10)
+            make.left.equalTo(dateLabel).offset(-6)
             make.width.equalTo(MINIMIZED_LIST_WIDTH)
-            make.height.equalTo(10)
-            make.centerX.equalTo(self.view)
         }
         
-        noteTextView.snp.makeConstraints { (make) in
-            make.top.equalTo(noteLabel.snp.bottom).offset(5)
-            make.left.equalTo(statusLabel).offset(-6)
+        levelLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(kBuffer)
+            make.top.equalTo(dateTextField.snp.bottom).offset(16)
+        }
+        
+        levelTextField.snp.makeConstraints { (make) in
+            make.top.equalTo(levelLabel.snp.bottom).offset(10)
+            make.left.equalTo(levelLabel).offset(-6)
             make.width.equalTo(MINIMIZED_LIST_WIDTH)
-            make.bottom.equalTo(scrollView.snp.bottom)
         }
+    }
+    func showDatePicker(){
+        //Formate Date
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.minimumDate = Date()
         
-        textViewPlaceholder.snp.makeConstraints { (make) in
-            make.top.width.left.equalTo(noteTextView)
-            make.height.equalTo(30)
-        }
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        
+        //done button & cancel button
+        let doneButton = UIBarButtonItem(title: R.string.localization.done(), style: .done, target: self, action: #selector(donedatePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        toolbar.setItems([doneButton,spaceButton], animated: false)
+        
+        // add toolbar to textField
+        dateTextField.inputAccessoryView = toolbar
+        // add datepicker to textField
+        dateTextField.inputView = datePicker
+        
+    }
+    
+    @objc func donedatePicker(){
+        //For date formate
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        dateTextField.text = formatter.string(from: datePicker.date)
+    }
+    
+    func showLevelPicker(){
+        //Formate Date
+        levelPicker.dataSource = self
+        levelPicker.delegate = self
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        
+        //done button & cancel button
+        let doneButton = UIBarButtonItem(title: R.string.localization.done(), style: .done, target: self, action: #selector(doneLevelPicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        toolbar.setItems([doneButton,spaceButton], animated: false)
+        
+        // add toolbar to textField
+        levelTextField.inputAccessoryView = toolbar
+        // add datepicker to textField
+        levelTextField.inputView = levelPicker
+        
+    }
+    
+    @objc func doneLevelPicker(){
+        let selectedIndex = levelPicker.selectedRow(inComponent: 0)
+        levelTextField.text = TaskLevel.allCases[selectedIndex].text
     }
     
     private func applyDismissKeyboardGesture() {
@@ -192,24 +251,6 @@ class TaskViewController: UIViewController {
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            savedYValue = scrollView.contentOffset.y
-            keyboardIsShown = true
-            scrollView.isScrollEnabled = false
-            
-            taskTextView.snp.makeConstraints { (make) in
-                self.taskTextViewHeightConstraint = make.height.equalTo(scrollView.frame.height - keyboardSize.height - SAFE_BUFFER - 20).constraint
-            }
-
-            noteTextView.snp.makeConstraints({ (make) in
-                self.noteTextViewHeightConstraint = make.height.equalTo(scrollView.frame.height - keyboardSize.height - SAFE_BUFFER - 20).constraint
-            })
-            
-            taskTextView.isScrollEnabled = true
-            noteTextView.isScrollEnabled = true
-            
-            view.layoutIfNeeded()
-        }
     }
     
     @objc func dismissKeyboard() {
@@ -219,11 +260,24 @@ class TaskViewController: UIViewController {
         if (taskTextView.text == "") {
             taskTextView.text = task.text
         } else {
+            let id = task.id
             let realm = try! Realm()
+            guard let text = taskTextView.text, text.count > 0 else { return }
+            guard let _date = dateTextField.text, _date.count > 0 else { return }
+            guard let _level = levelTextField.text, _level.count > 0 else { return }
+            let level = levelPicker.selectedRow(inComponent: 0)
+            let levelTask = TaskLevel.allCases[level].rawValue
+            let date = datePicker.date
+            guard text != "" else { return }
+            
             try! realm.write {
-                task.text = taskTextView.text
-                task.note = noteTextView.text
+                task.text = text
+                task.level = levelTask
+                task.dueDate = date
             }
+            
+            let contentTitle = "\(text) - \(R.string.localization.level()): \(TaskLevel.allCases[level].text) "
+            MeNotificationManager.shared.schedule(id: id, contentTitle: contentTitle, date: date )
         }
         
         if (taskTextViewHeightConstraint != nil) {
@@ -235,7 +289,7 @@ class TaskViewController: UIViewController {
         }
         
         taskTextView.isScrollEnabled = false
-        noteTextView.isScrollEnabled = false
+        //noteTextView.isScrollEnabled = false
         
         view.endEditing(true)
     }
@@ -263,33 +317,34 @@ extension TaskViewController: UIGestureRecognizerDelegate {
 
 extension TaskViewController: UIScrollViewDelegate {
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if (scrollView.contentOffset.y < -UIScreen.main.bounds.height*0.18 &&
-            !keyboardIsShown) {
-            closeView(deletedTask: false)
-        }
-    }
-    
 }
 
 extension TaskViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if (textView == noteTextView) {
-            textViewPlaceholder.alpha = 0
-            scrollView.setContentOffset(CGPoint(x: 0, y: noteLabel.frame.origin.y - SAFE_BUFFER), animated: true)
-        } else {
-            scrollView.setContentOffset(CGPoint(x: 0, y: statusLabel.frame.origin.y - SAFE_BUFFER), animated: true)
-        }
+       
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        if (textView == noteTextView &&
-            textView.text == "") {
-            textViewPlaceholder.alpha = 1
-        }
-        
         keyboardIsShown = false
     }
+    
+}
+extension TaskViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        3
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return TaskLevel.allCases[row].text
+    }
+    
+}
+
+extension TaskViewController: UIPickerViewDelegate {
     
 }

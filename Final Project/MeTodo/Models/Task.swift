@@ -30,7 +30,6 @@ class Task: Object {
     @objc dynamic var id = UUID().uuidString
     @objc dynamic var text = ""
     @objc dynamic var dueDate = Date(timeIntervalSince1970: 1)
-    @objc dynamic var note = ""
     @objc dynamic var level = TaskLevel.low.rawValue
     
     var taskLevel: TaskLevel {
